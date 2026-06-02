@@ -1,0 +1,2217 @@
+<!doctype html>
+<html lang="en" data-font="poppins">
+<head>
+<meta charset="utf-8">
+<title>Tufan Rugs — Wholesale Catalog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Tufan Rugs — wholesale rugs, pillows, poufs, fountains & seating. Where Art Meets the Floor.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Nunito:wght@300;400;500;600;700;800&family=Lato:wght@300;400;700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@200;300;400;500;600;700&display=swap">
+<style>
+:root {
+  /* === REAL TUFAN BRAND PALETTE (extracted from tufanrugs.com) === */
+  --c-brand: #DA277F;          /* magenta */
+  --c-brand-deep: #B01E68;     /* magenta hover/active */
+  --c-brand-soft: #F4D6E6;     /* soft pink accent */
+  --c-brand-tint: #FCEEF5;     /* light pink wash */
+  --c-surface: #FFFFFF;
+  --c-surface-alt: #F3F3F3;
+  --c-ink: #1A1A1A;
+  --c-ink-soft: #333333;
+  --c-text: #767676;
+  --c-text-mute: #838383;
+  --c-line: #E5E5E5;
+  --c-line-soft: #EFEFEF;
+  --c-overlay-dark: rgba(0, 0, 0, 0.45);
+  --c-overlay-soft: rgba(0, 0, 0, 0.25);
+
+  --r-sm: 4px;
+  --r-md: 6px;
+  --r-lg: 10px;
+  --r-pill: 999px;
+
+  --sh-card: 0 2px 10px rgba(0, 0, 0, 0.06);
+  --sh-lift: 0 10px 28px rgba(0, 0, 0, 0.12);
+  --sh-fab: 0 12px 32px rgba(218, 39, 127, 0.35);
+
+  /* Real Tufan brand fonts: Poppins for all headings, Nunito for all body */
+  --font-poppins: 'Poppins', Arial, Helvetica, sans-serif;
+  --font-inter:   'Inter', Arial, Helvetica, sans-serif;
+  --font-outfit:  'Outfit', Arial, Helvetica, sans-serif;
+  --font-body:    'Nunito', 'Lato', Arial, Helvetica, sans-serif;
+  --font:         var(--font-poppins);
+
+  --container: 1320px;
+  --z-header: 100;
+  --z-pin: 200;
+  --z-fab: 9000;
+  --z-modal: 9500;
+}
+[data-font="poppins"] { --font: var(--font-poppins); }
+[data-font="inter"]   { --font: var(--font-inter); }
+[data-font="outfit"]  { --font: var(--font-outfit); }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--c-surface); color: var(--c-ink); }
+body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  color: var(--c-text);
+}
+h1, h2, h3, h4, h5, h6 { font-family: var(--font); color: var(--c-ink); font-weight: 700; letter-spacing: -0.2px; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; font-size: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+input, textarea, select { font-family: inherit; font-size: inherit; }
+
+.container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+.eyebrow { font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--c-brand); font-weight: 700; font-family: var(--font); }
+.h-section { font-family: var(--font); font-size: 36px; font-weight: 700; color: var(--c-ink); line-height: 1.15; letter-spacing: -0.3px; }
+.h-section + p.section-sub { font-size: 15px; color: var(--c-text); max-width: 640px; margin-top: 12px; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 14px 28px;
+  font-family: var(--font); font-size: 13px; font-weight: 600;
+  letter-spacing: 1.6px; text-transform: uppercase;
+  border-radius: var(--r-md);
+  cursor: pointer; transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.btn-sm { padding: 9px 18px; font-size: 11px; letter-spacing: 1.2px; }
+.btn-sm svg { width: 14px; height: 14px; }
+.btn-primary { background: var(--c-brand); color: #FFFFFF; }
+.btn-primary:hover { background: var(--c-brand-deep); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(218, 39, 127, 0.3); }
+.btn-light { background: rgba(255, 255, 255, 0.95); color: var(--c-ink); }
+.btn-light:hover { background: #FFFFFF; transform: translateY(-1px); }
+.btn-dark { background: var(--c-ink); color: #FFFFFF; }
+.btn-dark:hover { background: #000; }
+.btn-ghost { background: transparent; color: var(--c-ink); border: 2px solid var(--c-ink); }
+.btn-ghost:hover { background: var(--c-ink); color: #FFFFFF; }
+
+/* ===== ANNOUNCEMENT BAR (REMOVED IN V7) ===== */
+.announce { display: none !important; }
+
+/* ===== HEADER ===== */
+.header {
+  position: sticky; top: 0; z-index: var(--z-header);
+  background: #FFFFFF; border-bottom: 1px solid var(--c-line);
+}
+.header-top {
+  display: flex; align-items: center; gap: 28px;
+  padding: 16px 32px;
+  max-width: var(--container); margin: 0 auto;
+}
+.brand-logo {
+  display: inline-flex; align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+  line-height: 1;
+}
+.brand-logo .brand-mark {
+  display: block;
+  height: 44px; width: auto; max-width: 200px;
+  object-fit: contain;
+  transition: opacity 0.2s ease;
+}
+.brand-logo .brand-fallback { display: none; } /* visible only via @supports below */
+.brand-logo:hover .brand-mark { opacity: 0.85; }
+.brand-logo-sm .brand-mark { height: 38px; max-width: 170px; }
+.search-wrap { flex: 1; max-width: 520px; position: relative; }
+.search-wrap input {
+  width: 100%; padding: 12px 16px 12px 44px;
+  border: 1px solid var(--c-line); border-radius: 4px;
+  background: #FFFFFF; color: var(--c-ink); font-size: 14px;
+  font-family: var(--font-body);
+  transition: border-color 0.2s ease;
+}
+.search-wrap input::placeholder { color: var(--c-text-mute); }
+.search-wrap input:focus { outline: none; border-color: var(--c-brand); }
+.search-wrap .search-icon {
+  position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+  width: 18px; height: 18px; color: var(--c-text-mute); pointer-events: none;
+}
+.header-icons {
+  display: flex; align-items: center; gap: 10px;
+  margin-left: auto;
+}
+.header-icons .hdr-icon-link {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px; border-radius: var(--r-pill);
+  color: var(--c-ink); transition: all 0.2s ease;
+}
+.header-icons .hdr-icon-link:hover { background: var(--c-brand-tint); color: var(--c-brand); }
+.header-icons svg { width: 20px; height: 20px; }
+
+/* Account chip — swaps text once a user is signed in */
+.acct-chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  height: 38px; padding: 0 14px 0 10px;
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-pill);
+  color: var(--c-ink);
+  background: #FFFFFF;
+  font-family: var(--font); font-size: 12.5px; font-weight: 600;
+  letter-spacing: 0.6px;
+  transition: all 0.2s ease;
+  max-width: 220px;
+}
+.acct-chip:hover { background: var(--c-brand-tint); color: var(--c-brand); border-color: var(--c-brand-soft); }
+.acct-chip svg { width: 17px; height: 17px; flex-shrink: 0; }
+.acct-chip-label { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.acct-chip.is-loggedin { background: var(--c-brand); color: #FFFFFF; border-color: var(--c-brand); }
+.acct-chip.is-loggedin:hover { background: var(--c-brand-deep); border-color: var(--c-brand-deep); color: #FFFFFF; }
+.acct-chip.is-loggedin svg circle, .acct-chip.is-loggedin svg path { stroke: #FFFFFF; }
+.acct-chip .caret { font-size: 10px; opacity: 0.7; }
+
+.nav-row {
+  border-top: 1px solid var(--c-line);
+  background: #FFFFFF;
+}
+.nav-inner {
+  max-width: var(--container); margin: 0 auto;
+  display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
+  gap: 4px;
+  padding: 12px 32px;
+}
+.nav-inner a {
+  padding: 8px 16px;
+  font-family: var(--font); font-size: 12.5px; font-weight: 600;
+  letter-spacing: 1.4px; text-transform: uppercase;
+  color: var(--c-ink-soft); white-space: nowrap;
+  transition: color 0.2s ease;
+}
+.nav-inner a:hover, .nav-inner a.active { color: var(--c-brand); }
+
+/* ===== HERO (FULL BLEED, NO BOUNDARY) ===== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: min(80vh, 720px);
+  min-height: 540px;
+  overflow: hidden;
+  background: #1A1A1A;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+.hero::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.55) 100%);
+  z-index: 2;
+}
+.hero-inner {
+  position: relative; z-index: 3;
+  max-width: var(--container); margin: 0 auto;
+  height: 100%;
+  display: flex; align-items: flex-end; justify-content: space-between;
+  padding: 0 32px 60px;
+  gap: 40px;
+}
+.hero-left { max-width: 56%; }
+.hero-right { max-width: 40%; text-align: left; }
+.hero-headline {
+  font-family: var(--font); font-size: clamp(36px, 5vw, 64px);
+  font-weight: 700; color: #FFFFFF; line-height: 1.05;
+  letter-spacing: -1.5px;
+}
+.hero-sub {
+  font-family: var(--font-body); font-size: 16px; line-height: 1.6;
+  color: rgba(255,255,255,0.92); margin-bottom: 20px;
+}
+
+/* ===== PROMO BANNER ===== */
+.promo-banner {
+  background: var(--c-brand-tint);
+  padding: 40px 20px; text-align: center;
+}
+.promo-banner h3 {
+  font-family: var(--font); font-size: 26px; font-weight: 700;
+  color: var(--c-ink); margin-bottom: 8px;
+}
+.promo-banner a {
+  display: inline-block; margin-top: 8px;
+  font-family: var(--font); font-size: 14px; font-weight: 600;
+  color: var(--c-brand); letter-spacing: 1px;
+  border-bottom: 2px solid var(--c-brand); padding-bottom: 2px;
+}
+.promo-banner a:hover { color: var(--c-brand-deep); border-color: var(--c-brand-deep); }
+
+/* ===== SECTION SHELL ===== */
+.section { padding: 70px 0; }
+.section-head { margin-bottom: 36px; }
+
+/* ===== COLLECTIONS — single section, big 2-row grid ===== */
+.coll-wrap { position: relative; max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+.coll-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.coll-tile {
+  position: relative;
+  height: 360px;
+  border-radius: var(--r-lg);
+  overflow: hidden; cursor: pointer;
+  background: var(--c-surface-alt);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.coll-tile:hover { transform: translateY(-4px); box-shadow: var(--sh-lift); }
+.coll-tile img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.coll-tile:hover img { transform: scale(1.06); }
+.coll-tile-body {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 38%, rgba(0,0,0,0.72) 100%);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  align-items: flex-start; padding: 22px;
+  color: #FFFFFF;
+}
+.coll-tile-name {
+  font-family: var(--font); font-size: 22px; font-weight: 700;
+  color: #FFFFFF; margin-bottom: 4px; letter-spacing: -0.2px;
+}
+.coll-tile-count { font-size: 13px; color: rgba(255,255,255,0.88); font-family: var(--font-body); }
+.coll-tile-shop {
+  display: inline-block;
+  background: var(--c-brand); color: #FFFFFF;
+  padding: 7px 16px;
+  font-family: var(--font); font-size: 11px; font-weight: 600;
+  letter-spacing: 1px; text-transform: uppercase;
+  border-radius: var(--r-sm);
+  margin-bottom: 12px;
+  align-self: flex-start;
+}
+
+/* ===== BESTSELLERS · RTL MARQUEE STRIP ===== */
+.bs-marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 8px 0 28px;
+  mask-image: linear-gradient(90deg, transparent 0, #000 60px, #000 calc(100% - 60px), transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 60px, #000 calc(100% - 60px), transparent 100%);
+}
+.bs-track {
+  display: flex; gap: 22px;
+  width: max-content;
+  animation: bs-rtl 60s linear infinite;
+}
+.bs-marquee:hover .bs-track { animation-play-state: paused; }
+.bs-card {
+  flex: 0 0 240px; width: 240px;
+  background: #FFFFFF;
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+}
+.bs-card:hover { transform: translateY(-3px); box-shadow: var(--sh-lift); }
+.bs-card-img {
+  position: relative;
+  height: 240px;
+  background: var(--c-surface-alt);
+  overflow: hidden;
+}
+.bs-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.bs-card:hover .bs-card-img img { transform: scale(1.04); }
+.bs-card-body { padding: 14px 16px 18px; }
+.bs-card-coll {
+  font-family: var(--font); font-size: 10.5px; font-weight: 700;
+  color: var(--c-brand); letter-spacing: 1.6px; text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.bs-card-name {
+  font-family: var(--font); font-size: 15px; font-weight: 600;
+  color: var(--c-ink); line-height: 1.35; display: block;
+  margin-bottom: 4px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.bs-card-sku { font-family: var(--font-body); font-size: 11.5px; color: var(--c-text-mute); }
+.bs-card-cta {
+  display: block; text-align: center; margin-top: 12px;
+  background: var(--c-brand); color: #FFFFFF;
+  padding: 8px 14px;
+  font-family: var(--font); font-size: 11px; font-weight: 700;
+  letter-spacing: 1.2px; text-transform: uppercase;
+  border-radius: var(--r-sm);
+  transition: background 0.2s ease;
+}
+.bs-card-cta:hover { background: var(--c-brand-deep); color: #FFFFFF; }
+@keyframes bs-rtl {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bs-track { animation-duration: 240s; }
+}
+
+/* ===== PHILOSOPHY SECTION ===== */
+.philo {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 60px; align-items: center;
+  padding: 90px 32px;
+  max-width: var(--container); margin: 0 auto;
+}
+.philo-img {
+  width: 100%; height: 460px; object-fit: cover;
+  border-radius: var(--r-lg);
+}
+.philo-text h2 {
+  font-family: var(--font); font-size: 38px;
+  margin-bottom: 16px; color: var(--c-ink); line-height: 1.15;
+}
+.philo-text p {
+  font-size: 15px; color: var(--c-text); line-height: 1.8;
+  margin-bottom: 14px;
+}
+.philo-text .btn { margin-top: 22px; }
+
+/* ===== PRODUCT GRID ===== */
+.product-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.product-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.pcard {
+  position: relative;
+  background: #FFFFFF;
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.pcard:hover { transform: translateY(-3px); box-shadow: var(--sh-lift); border-color: var(--c-brand-soft); }
+.pcard-img {
+  position: relative;
+  width: 100%; aspect-ratio: 1 / 1;
+  background: var(--c-surface-alt);
+  overflow: hidden;
+}
+.pcard-img img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.pcard:hover .pcard-img img { transform: scale(1.05); }
+.pcard-wish {
+  position: absolute; top: 12px; right: 12px;
+  width: 34px; height: 34px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--r-pill);
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--c-ink); transition: all 0.2s ease;
+  z-index: 5;
+}
+.pcard-wish:hover { background: var(--c-brand); color: #FFFFFF; }
+.pcard-wish svg { width: 16px; height: 16px; }
+.pcard-body {
+  padding: 16px 18px 20px;
+}
+.pcard-cat { font-size: 11px; color: var(--c-text-mute); letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 6px; }
+.pcard-name {
+  font-family: var(--font); font-size: 16px; font-weight: 600;
+  color: var(--c-ink); margin-bottom: 4px;
+  line-height: 1.3;
+}
+.pcard-name:hover { color: var(--c-brand); }
+.pcard-sku { font-size: 11px; color: var(--c-text-mute); margin-bottom: 12px; }
+.pcard-price {
+  font-family: var(--font); font-size: 13px; font-weight: 600;
+  color: var(--c-ink); margin-bottom: 14px;
+  display: flex; align-items: center; gap: 6px;
+}
+.pcard-price .lock { color: var(--c-text-mute); font-weight: 400; font-size: 12px; }
+.pcard-actions { display: flex; gap: 8px; }
+.pcard-actions a, .pcard-actions button {
+  flex: 1; padding: 11px 8px;
+  font-family: var(--font); font-size: 11px; font-weight: 700;
+  letter-spacing: 1.2px; text-transform: uppercase;
+  border-radius: var(--r-sm); transition: all 0.2s ease;
+  text-align: center;
+}
+.pcard-actions .btn-access {
+  background: var(--c-brand); color: #FFFFFF;
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+}
+.pcard-actions .btn-access:hover { background: var(--c-brand-deep); }
+.pcard-actions .btn-access svg { width: 13px; height: 13px; }
+
+/* ===== ABOUT PAGE ===== */
+.page-head {
+  background: var(--c-brand-tint);
+  padding: 64px 32px 56px;
+  text-align: center;
+}
+.page-head h1 {
+  font-family: var(--font); font-size: clamp(32px, 4.5vw, 52px);
+  font-weight: 700; color: var(--c-ink); margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+.page-head p { color: var(--c-text); max-width: 600px; margin: 0 auto; font-size: 15px; }
+
+.about-grid {
+  display: grid; grid-template-columns: 1.2fr 1fr;
+  gap: 60px; align-items: center;
+}
+.about-img { width: 100%; height: 460px; object-fit: cover; border-radius: var(--r-lg); }
+.about-prose h2 { font-family: var(--font); font-size: 32px; margin-bottom: 16px; }
+.about-prose p { color: var(--c-text); margin-bottom: 14px; line-height: 1.8; }
+
+.value-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 28px; margin-top: 50px;
+}
+.value-card {
+  padding: 32px 26px;
+  border: 1px solid var(--c-line); border-radius: var(--r-lg);
+  background: #FFFFFF;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+.value-card:hover { border-color: var(--c-brand); transform: translateY(-3px); box-shadow: var(--sh-card); }
+.value-card .icon {
+  width: 44px; height: 44px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--c-brand-tint); color: var(--c-brand);
+  border-radius: var(--r-pill); margin-bottom: 14px;
+}
+.value-card .icon svg { width: 20px; height: 20px; }
+.value-card h4 { font-family: var(--font); font-size: 17px; margin-bottom: 8px; color: var(--c-ink); }
+.value-card p { font-size: 14px; color: var(--c-text); line-height: 1.7; }
+
+/* ===== CONTACT PAGE ===== */
+.contact-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 50px; align-items: flex-start; }
+.contact-form {
+  background: #FFFFFF; border: 1px solid var(--c-line);
+  border-radius: var(--r-lg); padding: 36px;
+}
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 18px; }
+.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+.field label { font-size: 12px; font-weight: 600; color: var(--c-ink); letter-spacing: 0.6px; text-transform: uppercase; }
+.field input, .field textarea, .field select {
+  padding: 12px 14px;
+  border: 1px solid var(--c-line); border-radius: var(--r-sm);
+  background: #FFFFFF; color: var(--c-ink); font-family: var(--font-body); font-size: 14px;
+  transition: border-color 0.2s ease;
+}
+.field input:focus, .field textarea:focus, .field select:focus { outline: none; border-color: var(--c-brand); }
+.field textarea { min-height: 130px; resize: vertical; }
+.contact-info {
+  background: var(--c-brand-tint);
+  padding: 36px;
+  border-radius: var(--r-lg);
+}
+.contact-info h3 { font-family: var(--font); font-size: 22px; margin-bottom: 18px; color: var(--c-ink); }
+.contact-info .info-block { margin-bottom: 22px; }
+.contact-info .info-block strong { display: block; font-size: 12px; color: var(--c-brand); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+.contact-info .info-block div { font-size: 15px; color: var(--c-ink); }
+
+/* ===== CATALOGUES PAGE ===== */
+.catalog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.catalog-card {
+  background: #FFFFFF; border: 1px solid var(--c-line);
+  border-radius: var(--r-lg); overflow: hidden;
+  transition: all 0.2s ease;
+}
+.catalog-card:hover { transform: translateY(-3px); box-shadow: var(--sh-lift); border-color: var(--c-brand-soft); }
+.catalog-cover {
+  width: 100%; aspect-ratio: 3 / 4;
+  background: var(--c-brand-tint);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--c-brand);
+  position: relative; overflow: hidden;
+}
+.catalog-cover img { width: 100%; height: 100%; object-fit: cover; opacity: 0.9; }
+.catalog-cover .pdf-badge {
+  position: absolute; top: 14px; left: 14px;
+  background: var(--c-ink); color: #FFFFFF;
+  font-family: var(--font); font-size: 10px; font-weight: 700;
+  letter-spacing: 1px; padding: 4px 10px;
+  border-radius: var(--r-sm); text-transform: uppercase;
+}
+.catalog-body { padding: 20px; }
+.catalog-body h4 { font-family: var(--font); font-size: 17px; margin-bottom: 4px; color: var(--c-ink); }
+.catalog-body p { font-size: 13px; color: var(--c-text); margin-bottom: 14px; }
+
+/* ===== OUR PHILOSOPHY (Home) ===== */
+.philo {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 60px; align-items: center;
+  padding: 90px 32px;
+  max-width: var(--container); margin: 0 auto;
+}
+.philo-img {
+  width: 100%; height: 460px; object-fit: cover;
+  border-radius: var(--r-lg);
+}
+.philo-text h2 {
+  font-family: var(--font); font-size: 38px;
+  margin-bottom: 16px; color: var(--c-ink); line-height: 1.15;
+}
+.philo-text p {
+  font-size: 15px; color: var(--c-text); line-height: 1.8;
+  margin-bottom: 14px;
+}
+.philo-text .btn { margin-top: 22px; }
+@media (max-width: 980px) {
+  .philo { grid-template-columns: 1fr; gap: 32px; padding: 56px 24px; }
+  .philo-img { height: 320px; }
+}
+
+/* ===== DESIGNED FOR THE TRADE (V7: smaller / tighter) ===== */
+.trade-block {
+  background: #1A1A1A;
+  color: #FFFFFF;
+  padding: 48px 32px 52px;
+  position: relative;
+}
+.trade-block .container { max-width: var(--container); margin: 0 auto; }
+.trade-headline {
+  font-family: var(--font); color: #FFFFFF;
+  font-size: clamp(22px, 3vw, 34px);
+  font-weight: 800; text-align: center;
+  letter-spacing: 1.2px; text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.trade-headline em {
+  font-style: italic; color: var(--c-brand);
+  font-weight: 800;
+}
+.trade-sub {
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 13.5px; color: #C8BFC2;
+  max-width: 580px; margin: 0 auto 28px;
+  line-height: 1.6;
+}
+.trade-cards {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 26px;
+}
+.trade-card {
+  background: #2A1F22;
+  border: 1px solid #3A2B30;
+  border-radius: var(--r-md);
+  padding: 22px 22px 24px;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+.trade-card:hover { border-color: var(--c-brand); transform: translateY(-3px); }
+.trade-icon {
+  width: 40px; height: 40px;
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--c-brand);
+  margin-bottom: 12px;
+}
+.trade-icon svg { width: 30px; height: 30px; }
+.trade-card h4 {
+  font-family: var(--font); font-size: 15px;
+  font-weight: 700; color: #FFFFFF;
+  margin-bottom: 6px;
+  letter-spacing: -0.1px;
+}
+.trade-card p {
+  font-family: var(--font-body);
+  font-size: 12.5px; line-height: 1.55;
+  color: #C8BFC2;
+}
+.trade-cta { text-align: center; }
+.trade-cta .btn { padding: 12px 28px; font-size: 12px; }
+
+/* ===== AUTH PAGES (LOGIN/SIGNUP) ===== */
+.auth-page {
+  min-height: calc(100vh - 280px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 60px 24px;
+  background: var(--c-brand-tint);
+}
+.auth-card {
+  width: 100%; max-width: 440px;
+  background: #FFFFFF; border-radius: var(--r-lg);
+  padding: 44px 40px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
+.auth-card-wide { max-width: 640px; }
+.auth-card h1 {
+  font-family: var(--font); font-size: 28px;
+  text-align: center; margin-bottom: 8px;
+  color: var(--c-ink); letter-spacing: -0.3px;
+}
+.auth-sub {
+  text-align: center; color: var(--c-text);
+  font-size: 14px; margin-bottom: 28px;
+}
+.auth-form .field { margin-bottom: 16px; }
+.auth-form label {
+  display: block; font-family: var(--font);
+  font-size: 11px; font-weight: 700;
+  color: var(--c-ink-soft); letter-spacing: 0.8px;
+  text-transform: uppercase; margin-bottom: 6px;
+}
+.auth-form input, .auth-form select {
+  width: 100%; padding: 12px 14px;
+  border: 1px solid var(--c-line); border-radius: var(--r-sm);
+  background: #FFFFFF; color: var(--c-ink);
+  font-family: var(--font-body); font-size: 14px;
+  transition: border-color 0.2s ease;
+}
+.auth-form input:focus, .auth-form select:focus { outline: none; border-color: var(--c-brand); }
+.auth-row {
+  display: flex; justify-content: space-between; align-items: center;
+  margin: 6px 0 18px;
+  font-size: 13px;
+}
+.auth-check {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 13px; color: var(--c-text);
+  font-weight: 400; letter-spacing: 0;
+  text-transform: none;
+}
+.auth-check input[type="checkbox"] { width: auto; }
+.auth-link {
+  color: var(--c-brand); font-weight: 600;
+  border-bottom: 1px solid transparent; transition: border-color 0.2s ease;
+}
+.auth-link:hover { border-color: var(--c-brand); }
+.auth-divider {
+  display: flex; align-items: center; gap: 12px;
+  margin: 24px 0 18px;
+  color: var(--c-text-mute); font-size: 11px; font-weight: 600; letter-spacing: 1.4px;
+}
+.auth-divider::before, .auth-divider::after {
+  content: ""; flex: 1; height: 1px; background: var(--c-line);
+}
+.auth-foot {
+  text-align: center; font-size: 14px;
+  color: var(--c-text); margin-top: 18px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #FFFFFF;
+  border-top: 1px solid var(--c-line);
+  padding: 60px 32px 36px;
+  color: var(--c-text);
+}
+.footer-inner {
+  max-width: var(--container); margin: 0 auto;
+  display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+.footer-brand .brand-logo { font-size: 28px; margin-bottom: 14px; }
+.footer-brand p { font-size: 14px; color: var(--c-text); line-height: 1.7; max-width: 280px; }
+.footer-col h4 {
+  font-family: var(--font); font-size: 13px; font-weight: 700;
+  color: var(--c-ink); letter-spacing: 1px; text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col a {
+  font-size: 13.5px; color: var(--c-text); transition: color 0.2s ease;
+}
+.footer-col a:hover { color: var(--c-brand); }
+.footer-social { display: flex; gap: 10px; }
+.footer-social a {
+  width: 36px; height: 36px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid var(--c-line); border-radius: var(--r-pill);
+  color: var(--c-ink-soft);
+}
+.footer-social a:hover { background: var(--c-brand); border-color: var(--c-brand); color: #FFFFFF; }
+.footer-social svg { width: 18px; height: 18px; }
+.footer-bottom {
+  max-width: var(--container); margin: 50px auto 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--c-line);
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 12px; color: var(--c-text-mute);
+}
+.footer-legal { display: flex; gap: 24px; }
+.footer-legal a:hover { color: var(--c-brand); }
+
+/* ===== COMMENT PINS (REPOSITIONED — corner offset, smaller, never on buttons) ===== */
+.cmt-pin {
+  position: absolute;
+  top: 6px; right: 6px;
+  width: 22px; height: 22px;
+  border-radius: var(--r-pill);
+  background: var(--c-brand);
+  border: 2px solid #FFFFFF;
+  display: inline-flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(218, 39, 127, 0.45);
+  z-index: var(--z-pin);
+  font-family: var(--font); font-size: 10px; font-weight: 700;
+  color: #FFFFFF;
+  transition: all 0.18s ease;
+  opacity: 0.55;
+}
+.cmt-pin:hover { opacity: 1; transform: scale(1.15); }
+.cmt-pin.has-comments { opacity: 1; }
+.cmt-pin svg { width: 11px; height: 11px; pointer-events: none; }
+.cmt-pin.s-approved { background: #16a34a; box-shadow: 0 2px 8px rgba(22, 163, 74, 0.5); }
+.cmt-pin.s-change  { background: #f59e0b; box-shadow: 0 2px 8px rgba(245, 158, 11, 0.5); }
+.cmt-pin.s-question { background: #2563eb; box-shadow: 0 2px 8px rgba(37, 99, 235, 0.5); }
+.cmt-pin.s-remove   { background: #dc2626; box-shadow: 0 2px 8px rgba(220, 38, 38, 0.5); }
+
+/* Anchor element to relative for pin */
+[data-cmt] { position: relative; }
+/* Pins on sections — top-right of container, slightly inside */
+section[data-cmt] > .cmt-pin,
+header[data-cmt] > .cmt-pin,
+footer[data-cmt] > .cmt-pin,
+.section[data-cmt] > .cmt-pin {
+  top: 14px; right: 14px;
+}
+/* Pins on hero — top-right corner, inside safe zone */
+.hero > .cmt-pin { top: 18px; right: 18px; opacity: 0.8; }
+/* Pins on text headings */
+h1[data-cmt] > .cmt-pin, h2[data-cmt] > .cmt-pin, h3[data-cmt] > .cmt-pin,
+h4[data-cmt] > .cmt-pin, p[data-cmt] > .cmt-pin {
+  top: -10px; right: -10px;
+}
+/* Pins on images / pcard imgs — top-LEFT corner so they don't conflict with wishlist */
+.pcard-img > .cmt-pin, .coll-tile > .cmt-pin, .insp-tile > .cmt-pin {
+  top: 8px; left: 8px; right: auto;
+}
+
+/* ===== FONT TOGGLE — small, top-right, never overlaps FAB ===== */
+.font-toggle {
+  position: fixed; top: 100px; right: 16px;
+  z-index: var(--z-fab);
+  display: flex; flex-direction: column;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-pill);
+  padding: 4px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  backdrop-filter: blur(8px);
+}
+.font-toggle .ft-label {
+  font-family: var(--font); font-size: 9px; font-weight: 700;
+  letter-spacing: 1.2px; color: var(--c-text-mute);
+  text-transform: uppercase; padding: 4px 10px 2px;
+}
+.font-toggle button {
+  padding: 7px 14px;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.5px; color: var(--c-ink-soft);
+  border-radius: var(--r-pill);
+  transition: all 0.15s ease;
+}
+.font-toggle button.active { background: var(--c-brand); color: #FFFFFF; }
+.font-toggle button[data-font="poppins"] { font-family: var(--font-poppins); font-weight: 600; }
+.font-toggle button[data-font="inter"]   { font-family: var(--font-inter);   font-weight: 400; }
+.font-toggle button[data-font="outfit"]  { font-family: var(--font-outfit);  font-weight: 300; }
+
+/* ===== COMMENT FAB ===== */
+.cmt-fab {
+  position: fixed; left: 20px; bottom: 20px;
+  z-index: var(--z-fab);
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 22px;
+  background: var(--c-brand); color: #FFFFFF;
+  font-family: var(--font); font-size: 13px; font-weight: 600;
+  letter-spacing: 1px; text-transform: uppercase;
+  border-radius: var(--r-pill);
+  box-shadow: var(--sh-fab);
+  transition: all 0.2s ease;
+}
+.cmt-fab:hover { background: var(--c-brand-deep); transform: translateY(-2px); }
+.cmt-fab svg { width: 18px; height: 18px; }
+.cmt-fab .count {
+  background: #FFFFFF; color: var(--c-brand);
+  font-size: 11px; font-weight: 700;
+  padding: 2px 9px; border-radius: var(--r-pill);
+  min-width: 22px; text-align: center;
+}
+
+/* ===== MODAL ===== */
+.cmt-modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: var(--z-modal);
+  display: none; align-items: center; justify-content: center;
+  padding: 20px;
+}
+.cmt-modal-overlay.open { display: flex; }
+.cmt-modal {
+  background: #FFFFFF; border-radius: var(--r-lg);
+  width: 100%; max-width: 520px;
+  padding: 28px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.cmt-modal h3 {
+  font-family: var(--font); font-size: 18px;
+  margin-bottom: 4px;
+}
+.cmt-modal .target-label {
+  font-size: 12px; color: var(--c-text-mute);
+  margin-bottom: 18px;
+}
+.cmt-modal label { display: block; font-size: 11px; font-weight: 700; color: var(--c-ink); letter-spacing: 0.6px; text-transform: uppercase; margin-bottom: 6px; margin-top: 14px; }
+.cmt-modal label:first-of-type { margin-top: 0; }
+.cmt-modal input, .cmt-modal textarea, .cmt-modal select {
+  width: 100%; padding: 10px 12px;
+  border: 1px solid var(--c-line); border-radius: var(--r-sm);
+  background: #FFFFFF; color: var(--c-ink); font-family: var(--font-body); font-size: 14px;
+}
+.cmt-modal textarea { min-height: 90px; resize: vertical; }
+.cmt-modal .existing { margin-top: 18px; max-height: 200px; overflow-y: auto; }
+.cmt-modal .existing .ex {
+  padding: 10px 12px; background: var(--c-surface-alt);
+  border-radius: var(--r-sm); margin-bottom: 8px;
+  font-size: 13px; color: var(--c-ink-soft);
+  display: flex; flex-direction: column; gap: 4px;
+}
+.cmt-modal .existing .ex header {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 11px; color: var(--c-text-mute);
+}
+.cmt-modal .existing .ex .ex-status { font-weight: 700; }
+.cmt-modal .existing .ex .ex-delete { color: #dc2626; font-size: 11px; cursor: pointer; background: none; border: 0; padding: 0; }
+.cmt-modal .actions {
+  display: flex; gap: 8px; justify-content: flex-end;
+  margin-top: 20px;
+}
+.cmt-modal .actions button {
+  padding: 10px 20px;
+  font-family: var(--font); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.6px; text-transform: uppercase;
+  border-radius: var(--r-sm);
+}
+.cmt-modal .actions .cancel { background: var(--c-surface-alt); color: var(--c-ink); }
+.cmt-modal .actions .save { background: var(--c-brand); color: #FFFFFF; }
+.cmt-modal .actions .save:hover { background: var(--c-brand-deep); }
+
+/* Toast */
+.cmt-toast {
+  position: fixed; left: 50%; bottom: 90px; transform: translateX(-50%);
+  background: var(--c-ink); color: #FFFFFF;
+  padding: 11px 22px; border-radius: var(--r-pill);
+  font-family: var(--font); font-size: 13px;
+  z-index: 9999; opacity: 0; pointer-events: none;
+  transition: opacity 0.18s ease;
+}
+.cmt-toast.show { opacity: 1; }
+
+@media print {
+  .cmt-pin, .cmt-fab, .font-toggle, .cmt-modal-overlay, .cmt-toast { display: none !important; }
+}
+
+/* ===== PRODUCT DETAIL PAGE (PDP) ===== */
+.pdp-wrap { max-width: var(--container); margin: 0 auto; padding: 24px 32px 80px; }
+.breadcrumb {
+  font-family: var(--font-body); font-size: 13px; color: var(--c-text-mute);
+  margin-bottom: 22px;
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+}
+.breadcrumb a { color: var(--c-text); transition: color 0.2s ease; }
+.breadcrumb a:hover { color: var(--c-brand); }
+.breadcrumb .sep { color: var(--c-line); }
+.breadcrumb .current { color: var(--c-ink); font-weight: 600; }
+
+.pdp-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: flex-start;
+}
+.pdp-gallery { display: flex; flex-direction: column; gap: 14px; }
+.pdp-main-img {
+  position: relative; width: 100%; aspect-ratio: 1 / 1;
+  background: var(--c-surface-alt);
+  border-radius: var(--r-md); overflow: hidden;
+}
+.pdp-main-img img { width: 100%; height: 100%; object-fit: cover; }
+.pdp-thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.pdp-thumb {
+  aspect-ratio: 1 / 1; background: var(--c-surface-alt);
+  border-radius: var(--r-sm); overflow: hidden;
+  border: 2px solid transparent; cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.pdp-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.pdp-thumb.active { border-color: var(--c-brand); }
+.pdp-thumb:hover { transform: translateY(-1px); }
+
+.pdp-info { padding-top: 4px; }
+.pdp-collection {
+  font-family: var(--font); font-size: 11px; font-weight: 700;
+  color: var(--c-brand); letter-spacing: 2px; text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.pdp-title {
+  font-family: var(--font); font-size: clamp(28px, 3.4vw, 42px);
+  font-weight: 700; color: var(--c-ink);
+  line-height: 1.15; letter-spacing: -0.4px;
+  margin-bottom: 8px;
+}
+.pdp-sku {
+  font-family: var(--font-body); font-size: 13px;
+  color: var(--c-text-mute); margin-bottom: 22px;
+}
+.pdp-price-box {
+  background: var(--c-brand-tint);
+  border: 1px solid var(--c-brand-soft);
+  border-radius: var(--r-md);
+  padding: 18px 22px; margin-bottom: 22px;
+  display: flex; align-items: center; gap: 14px;
+}
+.pdp-price-box svg { width: 18px; height: 18px; color: var(--c-brand); }
+.pdp-price-box .label {
+  font-family: var(--font); font-size: 13.5px;
+  font-weight: 700; color: var(--c-ink); letter-spacing: 0.2px;
+}
+.pdp-price-box .label small {
+  display: block;
+  font-family: var(--font-body); font-size: 12px; font-weight: 400;
+  color: var(--c-text); margin-top: 2px; letter-spacing: 0;
+}
+.pdp-cta-row {
+  display: flex; gap: 12px; margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+.pdp-cta-row .btn { flex: 0 0 auto; min-width: 0; }
+.pdp-cta-row .btn.btn-sm { padding: 10px 22px; }
+.pdp-cta-row .btn-ghost.btn-sm { padding: 10px 14px; }
+.pdp-cta-row .btn-ghost.btn-sm svg { width: 16px; height: 16px; }
+
+.pdp-desc {
+  font-family: var(--font-body); font-size: 15px;
+  color: var(--c-text); line-height: 1.75;
+  padding: 22px 0;
+  border-top: 1px solid var(--c-line);
+  border-bottom: 1px solid var(--c-line);
+  margin-bottom: 22px;
+}
+.pdp-specs {
+  display: grid; grid-template-columns: 140px 1fr;
+  gap: 14px 22px; font-family: var(--font-body); font-size: 14px;
+  margin-bottom: 8px;
+}
+.pdp-specs dt { color: var(--c-text-mute); font-family: var(--font); font-weight: 600; font-size: 12px; letter-spacing: 0.6px; text-transform: uppercase; }
+.pdp-specs dd { color: var(--c-ink); }
+
+.pdp-related { margin-top: 80px; }
+.pdp-related h3 {
+  font-family: var(--font); font-size: 26px;
+  font-weight: 700; color: var(--c-ink);
+  margin-bottom: 24px; letter-spacing: -0.3px;
+}
+
+@media (max-width: 980px) {
+  .pdp-grid { grid-template-columns: 1fr; gap: 32px; }
+  .pdp-wrap { padding: 18px 18px 60px; }
+}
+
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 980px) {
+  .header-top { flex-wrap: wrap; gap: 14px; }
+  .search-wrap { order: 3; flex-basis: 100%; max-width: none; }
+  .nav-inner { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; }
+  .hero-inner { flex-direction: column; align-items: flex-start; padding: 60px 24px 40px; }
+  .hero-left, .hero-right { max-width: 100%; }
+  .product-grid { grid-template-columns: repeat(3, 1fr); }
+  .product-grid.cols-3 { grid-template-columns: repeat(2, 1fr); }
+  .philo, .about-grid, .contact-grid { grid-template-columns: 1fr; padding: 50px 24px; gap: 32px; }
+  .value-grid { grid-template-columns: 1fr; }
+  .catalog-grid { grid-template-columns: repeat(2, 1fr); }
+  .insp-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 220px; }
+  .insp-tile:nth-child(1), .insp-tile:nth-child(5) { grid-column: auto; grid-row: auto; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .footer-brand { grid-column: 1 / -1; }
+}
+@media (max-width: 640px) {
+  .product-grid, .product-grid.cols-3 { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .h-section { font-size: 28px; }
+  .container { padding: 0 18px; }
+  .header-top { padding: 14px 18px; }
+  .hero { min-height: 460px; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+  .font-toggle { top: 80px; right: 8px; padding: 3px; }
+  .font-toggle button { padding: 6px 10px; font-size: 10px; }
+  .cmt-fab { left: 12px; bottom: 12px; padding: 11px 16px; font-size: 12px; }
+  .pcard-actions a, .pcard-actions button { padding: 9px 4px; font-size: 10px; }
+  .coll-grid { grid-template-columns: repeat(2, 1fr); }
+  .bs-card { flex: 0 0 200px; width: 200px; }
+  .bs-card-img { height: 200px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============== HEADER ============== -->
+<header class="header" data-cmt="header" data-cmt-label="Site header">
+  <div class="header-top">
+    <a href="#/" class="brand-logo" data-cmt="brand-logo" data-cmt-label="TUFAN brand logo" aria-label="Tufan Rugs home">
+      <img class="brand-mark" src="assets/tufan-logo.png" alt="Tufan Rugs" />
+      <span class="brand-fallback">TUFAN</span>
+    </a>
+
+    <div class="search-wrap" data-cmt="search-bar" data-cmt-label="Header search bar">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+      <input type="text" placeholder="Search for rugs, collections, SKUs..." aria-label="Search">
+    </div>
+
+    <div class="header-icons" data-cmt="header-icons" data-cmt-label="Header utility icons">
+      <a href="#/wishlist" title="Wishlist" aria-label="Wishlist" class="hdr-icon-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </a>
+      <a href="#/cart" title="Cart" aria-label="Cart" class="hdr-icon-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      </a>
+      <a href="#/login" id="acctChip" class="acct-chip" data-cmt="acct-chip" data-cmt-label="Account chip · logged-out state">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span class="acct-chip-label">Sign in</span>
+      </a>
+    </div>
+  </div>
+  <nav class="nav-row" data-cmt="main-nav" data-cmt-label="Main navigation">
+    <div class="nav-inner" id="navLinks"></div>
+  </nav>
+</header>
+
+<!-- ============== ROUTER OUTLET ============== -->
+<main id="app" role="main"></main>
+
+<!-- ============== FOOTER ============== -->
+<footer class="footer" data-cmt="footer" data-cmt-label="Site footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="#/" class="brand-logo brand-logo-sm" aria-label="Tufan Rugs home">
+        <img class="brand-mark" src="assets/tufan-logo.png" alt="Tufan Rugs" />
+        <span class="brand-fallback">TUFAN</span>
+      </a>
+      <p>Where art meets the floor. Hand-curated rugs, pillows, poufs and seating for trade buyers and interior professionals.</p>
+    </div>
+    <div class="footer-col" data-cmt="footer-shop" data-cmt-label="Footer · Shop column">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="#/rugs">Rugs</a></li>
+        <li><a href="#/accessories">Accessories</a></li>
+      </ul>
+    </div>
+    <div class="footer-col" data-cmt="footer-support" data-cmt-label="Footer · Support column">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="#/shipping">Shipping &amp; Delivery</a></li>
+        <li><a href="#/returns">Returns &amp; Replacements</a></li>
+        <li><a href="#/care">Product Care</a></li>
+        <li><a href="#/contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col" data-cmt="footer-company" data-cmt-label="Footer · Company column">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#/about">About Us</a></li>
+        <li><a href="#/catalogues">Catalogues</a></li>
+        <li><a href="#/trade">Trade Program</a></li>
+      </ul>
+    </div>
+    <div class="footer-col" data-cmt="footer-connect" data-cmt-label="Footer · Connect column">
+      <h4>Connect</h4>
+      <div class="footer-social">
+        <a href="https://instagram.com/tufanrugs" title="Instagram" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://facebook.com/tufanrugs" title="Facebook" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://tiktok.com/@tufanrugs" title="TikTok" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8.5a7.5 7.5 0 0 1-5-1.9V15a5 5 0 1 1-5-5"/><path d="M16 3v4.6a4.4 4.4 0 0 0 5 4.4"/></svg>
+        </a>
+      </div>
+      <ul style="margin-top: 18px;">
+        <li><a href="mailto:hello@tufanrugs.com">hello@tufanrugs.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© Tufan Rugs · Powered by WizCommerce. All rights reserved.</div>
+    <div class="footer-legal">
+      <a href="#/privacy">Privacy Policy</a>
+      <a href="#/terms">Terms &amp; Conditions</a>
+      <a href="#/accessibility">Accessibility</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ============== FONT TOGGLE (small, top-right) ============== -->
+<div class="font-toggle" role="group" aria-label="Preview font">
+  <div class="ft-label">Font</div>
+  <button data-font="poppins" class="active" type="button" title="Poppins (Tufan brand)">Poppins</button>
+  <button data-font="inter" type="button" title="Inter — modern thin">Inter</button>
+  <button data-font="outfit" type="button" title="Outfit — geometric thin">Outfit</button>
+</div>
+
+<!-- ============== COMMENT FAB ============== -->
+<button class="cmt-fab" id="cmtFab" type="button" title="Download all review comments as JSON">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  Export Review · <span class="count" id="cmtFabCount">0</span>
+</button>
+
+<!-- ============== MODAL ============== -->
+<div class="cmt-modal-overlay" id="cmtModal" role="dialog" aria-modal="true">
+  <div class="cmt-modal">
+    <h3>Add review comment</h3>
+    <div class="target-label" id="cmtTarget">—</div>
+
+    <label for="cmtStatus">Status</label>
+    <select id="cmtStatus">
+      <option value="approved">Approved</option>
+      <option value="change">Needs change</option>
+      <option value="question">Question</option>
+      <option value="remove">Remove</option>
+    </select>
+
+    <label for="cmtName">Reviewer name</label>
+    <input id="cmtName" type="text" placeholder="Your name" autocomplete="name">
+
+    <label for="cmtText">Comment</label>
+    <textarea id="cmtText" placeholder="What needs to change here? Be specific so eng/design can act on it."></textarea>
+
+    <div class="existing" id="cmtExisting"></div>
+
+    <div class="actions">
+      <button class="cancel" id="cmtCancel" type="button">Cancel</button>
+      <button class="save" id="cmtSave" type="button">Save comment</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============== TOAST ============== -->
+<div class="cmt-toast" id="cmtToast"></div>
+
+<script>
+
+var PRODUCTS_BY_CAT = {"Rugs":[{"sku":"EBA-01-5077GR.MU","name":"Ebano","coll":"Ebano","origin":"China","mat":"100% Polyester","img":"https://fileserver-g-p.sourcerer.tech/files/df138c4a-db0c-4cbf-8d29-d7b185cfb58f"},{"sku":"CRO-P-9012SI.BE","name":"Cross Premium","coll":"Cross Premium","origin":"China","mat":"100% Polyester","img":"https://fileserver-g-p.sourcerer.tech/files/54e17fad-d546-4061-87b4-56faa6a77a11"},{"sku":"ARTEMISA 224","name":"Artemisa","coll":"Artemisa","origin":"Iran","mat":"80% Wool, 20% Cotton","img":"https://fileserver-g-p.sourcerer.tech/files/7d4c555b-e0b8-41f9-8697-f7b08c892c06"},{"sku":"ECH-02-8010PURP","name":"Echo","coll":"Echo","origin":"China","mat":"100% Polyester","img":"https://fileserver-g-p.sourcerer.tech/files/fba2fbbc-d92c-4aa7-b1f9-da48e249165b"},{"sku":"IKG0000161","name":"Kilim Gabbeh","coll":"Kilim Gabbeh","origin":"Iran","mat":"100% Wool","img":"https://fileserver-g-p.sourcerer.tech/files/c1bb2a45-0e6b-4e43-a1ec-4cc56c6b5570"},{"sku":"IKS0000414","name":"Kilim Shiraz","coll":"Kilim Shiraz","origin":"Iran","mat":"100% Wool","img":"https://fileserver-g-p.sourcerer.tech/files/6743cef0-3390-4ef2-ad7a-c2e23ea6e97d"},{"sku":"BOH-01-79105GR.SI","name":"Bohem","coll":"Bohem","origin":"Turkey","mat":"100% Polyester","img":"https://fileserver-g-p.sourcerer.tech/files/4ff0e0d2-1f66-446d-abe3-34e1c69a1ec7"},{"sku":"VIR-07-2436IVOR","name":"Vira","coll":"Vira","origin":"India","mat":"80% Viscose, 20% Cotton","img":"https://fileserver-g-p.sourcerer.tech/files/e42f3488-d4ef-4d7c-86bc-10ed402b1289"},{"sku":"SER-03-5380BROW","name":"Serenity","coll":"Serenity","origin":"India","mat":"70% Viscose, 30% Cotton","img":"https://fileserver-g-p.sourcerer.tech/files/4e7dab55-9922-4373-9fe0-df68763317be"},{"sku":"GAM9012BEIG","name":"Gamma","coll":"Gamma","origin":"India","mat":"100% Polyester","img":"https://fileserver-g-p.sourcerer.tech/files/cee5ab9d-3ad9-498e-8790-2cb2c6478d5f"},{"sku":"ENI-02-1115GOLD","name":"Enigma","coll":"Enigma","origin":"Turkey","mat":"52% Viscose, 21% Acrylic, 16% Polyester,","img":"https://fileserver-g-p.sourcerer.tech/files/095ef24c-b250-4ca7-ad38-cfbe82823592"},{"sku":"TOL-01-5077BLUE","name":"Toledo","coll":"Toledo","origin":"Turkey","mat":"","img":"https://fileserver-g-p.sourcerer.tech/files/2124020b-d1ba-4315-b380-865c3e225aa4"}],"Pillows":[{"sku":"P-ZEB1414TAN","name":"Zebra Pillow","coll":"Zebra Pillow","origin":"India","mat":"","img":"https://fileserver-g-p.sourcerer.tech/files/cd76f017-64e7-43b4-a8c1-c54d655c58a6"},{"sku":"P-TIG1414SAND","name":"Tiger Pillow","coll":"Tiger Pillow","origin":"India","mat":"","img":"https://fileserver-g-p.sourcerer.tech/files/1aabc0e9-11c4-4e6b-82e8-6249c17a6416"},{"sku":"P-DAL2020GR.BL","name":"Dallas Pillow","coll":"Dallas Pillow","origin":"China","mat":"100% Polyester","img":"https://fileserver-g-p.sourcerer.tech/files/e170a3fd-3042-4f27-8419-6dee320ea7a3"},{"sku":"P-JAZ2020IVOR","name":"Jazmin Pillow","coll":"Jazmin Pillow","origin":"India","mat":"80% Polyester, 20% Cotton","img":"https://fileserver-g-p.sourcerer.tech/files/f76782e0-bedf-4747-9742-f9a47a432f22"},{"sku":"P-DUR2020ORAN","name":"Duran.B Pillow","coll":"Duran.B Pillow","origin":"China","mat":"100% Polyester","img":"https://fileserver-g-p.sourcerer.tech/files/17867ae8-ebbd-4fde-8c60-6dec7f528cc3"},{"sku":"P-FUZ2020SILV","name":"Fuzz Pillow","coll":"Fuzz Pillow","origin":"China","mat":"100% Polyester","img":"https://fileserver-g-p.sourcerer.tech/files/7a38fca4-b822-41a8-8ec3-92e35b476703"},{"sku":"P-TIG1414TAN","name":"Tiger Pillow","coll":"Tiger Pillow","origin":"India","mat":"","img":"https://fileserver-g-p.sourcerer.tech/files/45f79959-859c-44ad-a53c-62bfea286006"},{"sku":"P-JAZ2020GREE","name":"Jazmin Pillow","coll":"Jazmin Pillow","origin":"India","mat":"80% Polyester, 20% Cotton","img":"https://fileserver-g-p.sourcerer.tech/files/981b3df5-3539-478c-b559-93f96870bcf9"},{"sku":"P-DAL2020BROW","name":"Dallas Pillow","coll":"Dallas Pillow","origin":"China","mat":"100% Polyester","img":"https://fileserver-g-p.sourcerer.tech/files/d65d688c-7f98-4194-84c8-89bd7fbcc720"},{"sku":"P-DAL2020EGGP","name":"Dallas Pillow","coll":"Dallas Pillow","origin":"China","mat":"100% Polyester","img":"https://fileserver-g-p.sourcerer.tech/files/4125f1d3-edc8-4fcc-aba2-27f80854834e"},{"sku":"P-DUR2020CHOC","name":"Duran.B Pillow","coll":"Duran.B Pillow","origin":"China","mat":"100% Polyester","img":"https://fileserver-g-p.sourcerer.tech/files/bb9c6557-7419-41a5-a069-0d313a98a28a"},{"sku":"P-DAL2020BK.WH","name":"Dallas Pillow","coll":"Dallas Pillow","origin":"China","mat":"100% Polyester","img":"https://fileserver-g-p.sourcerer.tech/files/0e3e898a-1ac9-4a46-ac5d-f828fe9167ed"}],"Pouf":[{"sku":"O-BALBOA.LILA","name":"Balboa Pouf","coll":"Balboa Pouf","origin":"India","mat":"Cover: Cotton Filler: Eps Balls","img":"https://fileserver-g-p.sourcerer.tech/files/8fa39077-9fed-40c9-8dc1-7ab62908ea30"},{"sku":"O-COCO.SILV","name":"Coco Pouf","coll":"Coco Pouf","origin":"India","mat":"Cover: Polyester Filler: Eps Balls","img":"https://fileserver-g-p.sourcerer.tech/files/a740f3d5-54eb-4ea2-8ecb-12624553fff0"},{"sku":"BOS-02-9012OL.GN","name":"Boston","coll":"Boston","origin":"India","mat":"","img":"https://fileserver-g-p.sourcerer.tech/files/e1808742-9e9d-43ff-b8a0-4b7394880e9b"},{"sku":"O-KAREENA.GR.WH","name":"Kareena Pouf","coll":"Kareena Pouf","origin":"India","mat":"","img":"https://fileserver-g-p.sourcerer.tech/files/387de4c4-fff6-43eb-9b5b-e85bd7fc8240"},{"sku":"O-BALBOA-L-LILA","name":"Balboa Pouf","coll":"Balboa Pouf","origin":"India","mat":"Cover: Cotton Filler: Eps Balls","img":"https://fileserver-g-p.sourcerer.tech/files/a5bccbb3-65f2-4a0e-8109-a18c38c387d0"},{"sku":"O-BALBOA.SILV","name":"Balboa Pouf","coll":"Balboa Pouf","origin":"India","mat":"Cover: Cotton Filler: Eps Balls","img":"https://fileserver-g-p.sourcerer.tech/files/32fd3c40-e6b4-4116-8095-93bd71c36b65"},{"sku":"O-BALBOA.TURQ","name":"Balboa Pouf","coll":"Balboa Pouf","origin":"India","mat":"Cover: Cotton Filler: Eps Balls","img":"https://fileserver-g-p.sourcerer.tech/files/465b294e-ea14-4f56-b1f5-72023d52573b"},{"sku":"O-BALBOA.BLUE","name":"Balboa Pouf","coll":"Balboa Pouf","origin":"India","mat":"Cover: Cotton Filler: Eps Balls","img":"https://fileserver-g-p.sourcerer.tech/files/e99e1582-0cd4-4913-9585-f6db0191a380"},{"sku":"O-COCO.TEAL","name":"Coco Pouf","coll":"Coco Pouf","origin":"India","mat":"Cover: Polyester Filler: Eps Balls","img":"https://fileserver-g-p.sourcerer.tech/files/ada9a50f-732c-4438-a47d-334b9d803738"},{"sku":"O-BALBOA-L-RED","name":"Balboa Pouf","coll":"Balboa Pouf","origin":"India","mat":"Cover: Cotton Filler: Eps Balls","img":"https://fileserver-g-p.sourcerer.tech/files/e5fc743d-07cd-4b3f-9ab5-3f028537791a"},{"sku":"O-BALBOA.RED","name":"Balboa Pouf","coll":"Balboa Pouf","origin":"India","mat":"Cover: Cotton Filler: Eps Balls","img":"https://fileserver-g-p.sourcerer.tech/files/ecbde196-970d-4ea0-a35e-502e497d10e5"},{"sku":"O-BALBOA.GREE","name":"Balboa Pouf","coll":"Balboa Pouf","origin":"India","mat":"Cover: Cotton Filler: Eps Balls","img":"https://fileserver-g-p.sourcerer.tech/files/a3f670d3-4ba9-4e5c-9f4d-79f48a67accb"}],"Fountain":[{"sku":"FTN-20-1119GRAY","name":"FOUNTAIN","coll":"FOUNTAIN","origin":"China","mat":"100% Polyresin","img":"https://fileserver-g-p.sourcerer.tech/files/3bf33844-d0b7-4201-b4a9-0891ccbab15d"},{"sku":"FTN-21-1946GRAY","name":"FOUNTAIN","coll":"FOUNTAIN","origin":"China","mat":"100% Polyresin","img":"https://fileserver-g-p.sourcerer.tech/files/458af1c8-5f32-4b59-b1c3-a0b6363eb069"},{"sku":"FTN-17-1220GRAY","name":"FOUNTAIN","coll":"FOUNTAIN","origin":"China","mat":"100% Polyresin","img":"https://fileserver-g-p.sourcerer.tech/files/ef7643e8-b9a2-43aa-8518-8128307b98d8"},{"sku":"FTN-02-7014BROW","name":"FOUNTAIN","coll":"FOUNTAIN","origin":"China","mat":"100% Polyresin","img":"https://fileserver-g-p.sourcerer.tech/files/a91c476d-ea76-47dc-adbc-94d3a9cb44a3"},{"sku":"FTN-16-1220GRAY","name":"FOUNTAIN","coll":"FOUNTAIN","origin":"China","mat":"100% Polyresin","img":"https://fileserver-g-p.sourcerer.tech/files/d352e426-b1bc-477a-bbf8-9099c9963487"},{"sku":"FTN-01-2040GRAY","name":"FOUNTAIN","coll":"FOUNTAIN","origin":"China","mat":"100% Polyresin","img":"https://fileserver-g-p.sourcerer.tech/files/0fbb4d44-deca-4149-a610-f7a5712d7739"},{"sku":"FTN-05-9014GRAY","name":"FOUNTAIN","coll":"FOUNTAIN","origin":"China","mat":"100% Polyresin","img":"https://fileserver-g-p.sourcerer.tech/files/d167f965-af78-4c36-ae21-4bd7f9f23fdc"},{"sku":"FTN-13-3553GRAY","name":"FOUNTAIN","coll":"FOUNTAIN","origin":"China","mat":"100% Polyresin","img":"https://fileserver-g-p.sourcerer.tech/files/71fde58d-7e83-4d78-85ed-c4cef40a165f"},{"sku":"FTN-15-2539GRAY","name":"FOUNTAIN","coll":"FOUNTAIN","origin":"China","mat":"100% Polyresin","img":"https://fileserver-g-p.sourcerer.tech/files/e7834628-70ed-4cff-9588-0dfc1aeac0c4"},{"sku":"FTN-07-7013GR.WH","name":"FOUNTAIN","coll":"FOUNTAIN","origin":"China","mat":"100% Polyresin","img":"https://fileserver-g-p.sourcerer.tech/files/51ef2092-edbf-4073-a164-c2063157014a"},{"sku":"FTN-14-2224GRAY","name":"FOUNTAIN","coll":"FOUNTAIN","origin":"China","mat":"100% Polyresin","img":"https://fileserver-g-p.sourcerer.tech/files/ad2b3964-3328-4ea5-b512-38fcf543c9da"},{"sku":"FTN-19-9014GRAY","name":"FOUNTAIN","coll":"FOUNTAIN","origin":"China","mat":"100% Polyresin","img":"https://fileserver-g-p.sourcerer.tech/files/4f3aa247-c9f0-44bb-b681-8f52b09db930"}],"Chairs":[{"sku":"S-MON-GRAY","name":"Monaco Sofa","coll":"Monaco Sofa","origin":"China","mat":"","img":"https://fileserver-g-p.sourcerer.tech/files/55cd0071-2b78-4ade-a5cf-579a01b5e682"},{"sku":"NES-02-BK.WH","name":"Nest","coll":"Nest","origin":"China","mat":"Base Made Of Steel Basket: Resin Faux Wi","img":"https://fileserver-g-p.sourcerer.tech/files/9764f168-8b9f-46ab-941f-e5b49b65cc92"},{"sku":"NOVARA.GREEN","name":"Novara","coll":"Novara","origin":"China","mat":"","img":"https://fileserver-g-p.sourcerer.tech/files/cc7f8f1a-f8bf-46ec-a527-fb1016fcf5f7"},{"sku":"S-MON-BEIG","name":"Monaco Sofa","coll":"Monaco Sofa","origin":"China","mat":"","img":"https://fileserver-g-p.sourcerer.tech/files/652aee6b-3277-4745-95dd-6ea748af3385"},{"sku":"NES-01-BK.WH","name":"Nest","coll":"Nest","origin":"China","mat":"Base Made Of Steel Basket: Resin Faux Wi","img":"https://fileserver-g-p.sourcerer.tech/files/851a748a-a40d-4aaf-bb1f-18f2ec7dbf6c"},{"sku":"S-MON-BLUE","name":"Monaco Sofa","coll":"Monaco Sofa","origin":"China","mat":"","img":"https://fileserver-g-p.sourcerer.tech/files/7f19380c-65e6-4dd9-88de-779c6ce3ddb5"}]};
+var COLLECTIONS = [{"name":"Kilim Shiraz","cat":"Rugs","count":59,"img":"https://fileserver-g-p.sourcerer.tech/files/6743cef0-3390-4ef2-ad7a-c2e23ea6e97d"},{"name":"Artemisa","cat":"Rugs","count":59,"img":"https://fileserver-g-p.sourcerer.tech/files/7d4c555b-e0b8-41f9-8697-f7b08c892c06"},{"name":"Kilim Gabbeh","cat":"Rugs","count":37,"img":"https://fileserver-g-p.sourcerer.tech/files/c1bb2a45-0e6b-4e43-a1ec-4cc56c6b5570"},{"name":"Vegas","cat":"Rugs","count":14,"img":"https://fileserver-g-p.sourcerer.tech/files/54e17fad-d546-4061-87b4-56faa6a77a11"},{"name":"Ebano","cat":"Rugs","count":12,"img":"https://fileserver-g-p.sourcerer.tech/files/df138c4a-db0c-4cbf-8d29-d7b185cfb58f"},{"name":"Bohem","cat":"Rugs","count":9,"img":"https://fileserver-g-p.sourcerer.tech/files/4ff0e0d2-1f66-446d-abe3-34e1c69a1ec7"},{"name":"Serenity","cat":"Rugs","count":7,"img":"https://fileserver-g-p.sourcerer.tech/files/4e7dab55-9922-4373-9fe0-df68763317be"},{"name":"Vira","cat":"Rugs","count":11,"img":"https://fileserver-g-p.sourcerer.tech/files/e42f3488-d4ef-4d7c-86bc-10ed402b1289"},{"name":"Enigma","cat":"Rugs","count":8,"img":"https://fileserver-g-p.sourcerer.tech/files/095ef24c-b250-4ca7-ad38-cfbe82823592"},{"name":"Toledo","cat":"Rugs","count":6,"img":"https://fileserver-g-p.sourcerer.tech/files/2124020b-d1ba-4315-b380-865c3e225aa4"},{"name":"Dallas Pillow","cat":"Pillows","count":5,"img":"https://fileserver-g-p.sourcerer.tech/files/e170a3fd-3042-4f27-8419-6dee320ea7a3"},{"name":"Zebra Pillow","cat":"Pillows","count":3,"img":"https://fileserver-g-p.sourcerer.tech/files/cd76f017-64e7-43b4-a8c1-c54d655c58a6"},{"name":"Balboa Pouf","cat":"Pouf","count":13,"img":"https://fileserver-g-p.sourcerer.tech/files/8fa39077-9fed-40c9-8dc1-7ab62908ea30"},{"name":"Coco Pouf","cat":"Pouf","count":7,"img":"https://fileserver-g-p.sourcerer.tech/files/e1808742-9e9d-43ff-b8a0-4b7394880e9b"},{"name":"Fountain","cat":"Fountain","count":21,"img":"https://fileserver-g-p.sourcerer.tech/files/3bf33844-d0b7-4201-b4a9-0891ccbab15d"},{"name":"Monaco","cat":"Chairs","count":4,"img":"https://fileserver-g-p.sourcerer.tech/files/55cd0071-2b78-4ade-a5cf-579a01b5e682"}];
+var HERO_IMG = "https://fileserver-g-p.sourcerer.tech/files/7d4c555b-e0b8-41f9-8697-f7b08c892c06";
+
+//// ============== DATA ==============
+
+var NAV = [
+  { label: 'Home',         href: '#/' },
+  { label: 'Rugs',         href: '#/rugs' },
+  { label: 'Accessories',  href: '#/accessories' },
+  { label: 'About Us',     href: '#/about' },
+  { label: 'Catalogues',   href: '#/catalogues' },
+  { label: 'Contact Us',   href: '#/contact' }
+];
+
+// Accessories combines Pillows / Pouf / Fountain / Chairs
+var ACCESSORY_CATS = ['Pillows', 'Pouf', 'Fountain', 'Chairs'];
+
+//// === Lightweight auth mock (localStorage only — for demo) ===
+var AUTH_KEY = 'tufan-auth';
+function getUser() {
+  try { return JSON.parse(localStorage.getItem(AUTH_KEY) || 'null'); } catch (e) { return null; }
+}
+function setUser(u) { localStorage.setItem(AUTH_KEY, JSON.stringify(u)); }
+function logout() { localStorage.removeItem(AUTH_KEY); }
+function displayName(u) {
+  if (!u) return '';
+  var n = (u.company || '').trim() || (u.firstName || '').trim() || (u.email || '').split('@')[0];
+  return n.length > 20 ? n.slice(0, 20) + '\u2026' : n;
+}
+function refreshAcctChip() {
+  var chip = document.getElementById('acctChip');
+  if (!chip) return;
+  var u = getUser();
+  var labelEl = chip.querySelector('.acct-chip-label');
+  if (u) {
+    chip.classList.add('is-loggedin');
+    chip.setAttribute('href', '#/account');
+    chip.setAttribute('data-cmt-label', 'Account chip · logged-in (' + displayName(u) + ')');
+    if (labelEl) labelEl.textContent = displayName(u);
+  } else {
+    chip.classList.remove('is-loggedin');
+    chip.setAttribute('href', '#/login');
+    chip.setAttribute('data-cmt-label', 'Account chip · logged-out state');
+    if (labelEl) labelEl.textContent = 'Sign in';
+  }
+}
+
+//// (PRODUCTS_BY_CAT, COLLECTIONS, HERO_IMG injected below)
+
+//// ============== UTILITIES ==============
+
+function $(sel, root) { return (root || document).querySelector(sel); }
+function $$(sel, root) { return Array.from((root || document).querySelectorAll(sel)); }
+function esc(s) {
+  return String(s == null ? '' : s).replace(/[&<>"']/g, function(c) {
+    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+  });
+}
+function allProducts() {
+  var all = [];
+  Object.keys(PRODUCTS_BY_CAT).forEach(function(cat) {
+    PRODUCTS_BY_CAT[cat].forEach(function(p) { all.push(Object.assign({ cat: cat }, p)); });
+  });
+  return all;
+}
+function productCardHTML(p, idBase) {
+  var accessHref = getUser() ? '#/product/' + esc(p.sku) : '#/login';
+  return ''
+    + '<article class="pcard" data-cmt="' + idBase + '" data-cmt-label="Product card · ' + esc(p.name) + ' (' + esc(p.sku) + ')">'
+    +   '<div class="pcard-img">'
+    +     '<a href="#/product/' + esc(p.sku) + '" class="pcard-img-link" aria-label="View ' + esc(p.name) + '">'
+    +       '<img src="' + esc(p.img) + '" alt="' + esc(p.name) + '" loading="lazy" onerror="this.style.display=\'none\'">'
+    +     '</a>'
+    +     '<a href="#/wishlist" class="pcard-wish" title="Add to wishlist" aria-label="Wishlist">'
+    +       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>'
+    +     '</a>'
+    +   '</div>'
+    +   '<div class="pcard-body">'
+    +     '<div class="pcard-cat">' + esc(p.coll || p.cat || '') + '</div>'
+    +     '<a href="#/product/' + esc(p.sku) + '" class="pcard-name">' + esc(p.name) + '</a>'
+    +     '<div class="pcard-sku">SKU: ' + esc(p.sku) + '</div>'
+    +     '<div class="pcard-actions">'
+    +       '<a href="' + accessHref + '" class="btn-access" role="button">'
+    +         '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>'
+    +         'Access Pricing'
+    +       '</a>'
+    +     '</div>'
+    +   '</div>'
+    + '</article>';
+}
+
+//// ============== ROUTER ==============
+
+var ROUTES = {
+  '':              renderHome,
+  '/':             renderHome,
+  '/rugs':         function() { return renderCategory('Rugs'); },
+  '/accessories':  renderAccessories,
+  // legacy single-category routes still resolve (footer / deep links)
+  '/pillows':      function() { return renderCategory('Pillows'); },
+  '/pouf':         function() { return renderCategory('Pouf'); },
+  '/fountain':     function() { return renderCategory('Fountain'); },
+  '/chairs':       function() { return renderCategory('Chairs'); },
+  '/about':        renderAbout,
+  '/contact':      renderContact,
+  '/catalogues':   renderCatalogues,
+  '/customer-care':renderCustomerCare,
+  '/shipping':     renderShipping,
+  '/returns':      renderReturns,
+  '/care':         renderCare,
+  '/trade':        renderTrade,
+  '/login':        renderLogin,
+  '/signup':       renderSignup,
+  '/account':      renderAccount
+};
+
+function currentRoute() {
+  var h = window.location.hash || '#/';
+  return h.replace(/^#/, '') || '/';
+}
+
+function navigate() {
+  var r = currentRoute();
+  var html;
+  // Dynamic /product/<sku> route
+  var pdpMatch = r.match(/^\/product\/(.+)$/);
+  if (pdpMatch) {
+    html = renderProduct(decodeURIComponent(pdpMatch[1]));
+  } else {
+    var fn = ROUTES[r];
+    if (!fn) fn = renderHome;
+    html = fn();
+  }
+  document.getElementById('app').innerHTML = html;
+  $$('.nav-inner a').forEach(function(a) {
+    var href = a.getAttribute('href');
+    var active = (href === '#' + r);
+    if (!active && href === '#/accessories' && ACCESSORY_CATS.some(function(c){ return '/' + c.toLowerCase() === r; })) active = true;
+    a.classList.toggle('active', active);
+  });
+  window.scrollTo({ top: 0, behavior: 'instant' });
+  refreshAcctChip();
+  if (r === '/' || r === '') wireHome();
+  attachPins();
+  refreshAllPins();
+}
+
+window.addEventListener('hashchange', navigate);
+
+//// ============== PAGE: HOME ==============
+
+function renderHome() {
+  // Collections — single big 2-row grid (8 tiles)
+  var collTiles = COLLECTIONS.slice(0, 8).map(function(c, i) {
+    var slug = c.cat ? c.cat.toLowerCase() : 'rugs';
+    var routeFor = (slug === 'rugs') ? '#/rugs'
+                 : (ACCESSORY_CATS.indexOf(c.cat) > -1) ? '#/accessories'
+                 : '#/rugs';
+    return ''
+      + '<a href="' + routeFor + '" class="coll-tile" data-cmt="home-coll-' + (i+1) + '" data-cmt-label="Collection tile · ' + esc(c.name) + '">'
+      +   '<img src="' + esc(c.img) + '" alt="' + esc(c.name) + '" loading="lazy" onerror="this.style.display=\'none\'">'
+      +   '<div class="coll-tile-body">'
+      +     '<span class="coll-tile-shop">Shop Now</span>'
+      +     '<div class="coll-tile-name">' + esc(c.name) + '</div>'
+      +     '<div class="coll-tile-count">' + c.count + ' items</div>'
+      +   '</div>'
+      + '</a>';
+  }).join('');
+
+  // Bestsellers — RTL marquee strip with duplicated track for seamless loop
+  var bsItems = (PRODUCTS_BY_CAT.Rugs.slice(0, 6).concat(PRODUCTS_BY_CAT.Rugs.slice(6, 10)));
+  function bsCardHTML(p, i) {
+    var accessHref = getUser() ? '#/product/' + esc(p.sku) : '#/login';
+    return ''
+      + '<a href="#/product/' + esc(p.sku) + '" class="bs-card" data-cmt="home-bs-' + (i+1) + '" data-cmt-label="Bestseller · ' + esc(p.name) + ' (' + esc(p.sku) + ')">'
+      +   '<div class="bs-card-img"><img src="' + esc(p.img) + '" alt="' + esc(p.name) + '" loading="lazy" onerror="this.style.display=\'none\'"></div>'
+      +   '<div class="bs-card-body">'
+      +     '<div class="bs-card-coll">' + esc(p.coll || 'Rugs') + '</div>'
+      +     '<span class="bs-card-name">' + esc(p.name) + '</span>'
+      +     '<div class="bs-card-sku">SKU: ' + esc(p.sku) + '</div>'
+      +     '<span class="bs-card-cta">Access Pricing</span>'
+      +   '</div>'
+      + '</a>';
+  }
+  var bsHtml = bsItems.map(bsCardHTML).join('');
+  // Duplicate the track so the marquee loops seamlessly (50% translate)
+  var bsTrack = bsHtml + bsHtml;
+
+  return ''
+    + '<!-- HERO -->'
+    + '<section class="hero" data-cmt="home-hero" data-cmt-label="Hero banner">'
+    +   '<img class="hero-bg" src="' + esc(HERO_IMG) + '" alt="Tufan signature rug" onerror="this.style.display=\'none\'">'
+    +   '<div class="hero-inner">'
+    +     '<div class="hero-left">'
+    +       '<div class="eyebrow" style="color:#F4D6E6">Wholesale Catalog · For the Trade</div>'
+    +       '<h1 class="hero-headline">Where Art Meets the Floor</h1>'
+    +     '</div>'
+    +     '<div class="hero-right">'
+    +       '<p class="hero-sub">Hand-curated rugs, pillows, poufs and seating &mdash; sourced from Iran, India, Turkey and China. Sign in to unlock wholesale pricing.</p>'
+    +       '<a href="#/rugs" class="btn btn-light">Explore the Collection</a>'
+    +     '</div>'
+    +   '</div>'
+    + '</section>'
+
+    // BESTSELLERS first (RTL marquee, single row)
+    + '<section class="section" style="padding-bottom:36px;" data-cmt="home-bestsellers" data-cmt-label="Home · Bestsellers strip">'
+    +   '<div class="container">'
+    +     '<div class="section-head">'
+    +       '<div class="eyebrow">Bestsellers</div>'
+    +       '<h2 class="h-section">Best Sellers from Market</h2>'
+    +       '<p class="section-sub">What\'s moving this season across our trade partners.</p>'
+    +     '</div>'
+    +   '</div>'
+    +   '<div class="bs-marquee" data-cmt="home-bs-marquee" data-cmt-label="Bestsellers · scrolling strip">'
+    +     '<div class="bs-track">' + bsTrack + '</div>'
+    +   '</div>'
+    + '</section>'
+
+    // COLLECTIONS next, single section, big 2-row grid
+    + '<section class="section" style="background:var(--c-surface-alt); padding-top:50px;" data-cmt="home-collections" data-cmt-label="Home · Collections section">'
+    +   '<div class="container">'
+    +     '<div class="section-head">'
+    +       '<div class="eyebrow">By Collection</div>'
+    +       '<h2 class="h-section">Shop by Collection</h2>'
+    +       '<p class="section-sub">Curated by origin, weave and palette \u2014 choose where you want the conversation to start.</p>'
+    +     '</div>'
+    +   '</div>'
+    +   '<div class="coll-wrap"><div class="coll-grid">' + collTiles + '</div></div>'
+    + '</section>'
+
+    // OUR PHILOSOPHY (restored in V8 — between Collections and Trade block)
+    + '<section class="philo" data-cmt="home-philosophy" data-cmt-label="Home · Philosophy section">'
+    +   '<img class="philo-img" src="' + esc(COLLECTIONS[2] && COLLECTIONS[2].img ? COLLECTIONS[2].img : (COLLECTIONS[0] && COLLECTIONS[0].img || '')) + '" alt="Tufan philosophy" loading="lazy" onerror="this.style.display=\'none\'">'
+    +   '<div class="philo-text">'
+    +     '<div class="eyebrow">Our Philosophy</div>'
+    +     '<h2>Craft you can stand on</h2>'
+    +     '<p>Every Tufan piece begins in a small studio &mdash; knotted, woven, or tufted by an artisan whose family has worked rugs for generations.</p>'
+    +     '<p>We work directly with weavers in Iran, India, Turkey and China to bring you commercial-quality goods at honest wholesale pricing &mdash; no markups, no middlemen.</p>'
+    +     '<a href="#/about" class="btn btn-dark">Read Our Story</a>'
+    +   '</div>'
+    + '</section>'
+
+    // DESIGNED FOR THE TRADE (smaller version)
+    + tradeBlockHTML('home');
+}
+
+function wireHome() { /* marquee is pure CSS; no JS handlers needed in V7 */ }
+
+//// ============== PAGE: SHOP ALL ==============
+
+function renderShopAll() {
+  var all = allProducts();
+  var grid = all.map(function(p, i) {
+    return productCardHTML(p, 'all-' + (i+1));
+  }).join('');
+
+  var counts = Object.keys(PRODUCTS_BY_CAT).map(function(k) {
+    return '<a href="#/' + k.toLowerCase() + '" data-cmt="shopall-filter-' + esc(k) + '" data-cmt-label="Shop-all · ' + esc(k) + ' filter chip" style="display:inline-block; padding:8px 16px; margin:4px; background:#FFFFFF; border:1px solid var(--c-line); border-radius: var(--r-pill); font-family:var(--font); font-size:13px; font-weight:600; color: var(--c-ink); letter-spacing:0.4px;">' + esc(k) + ' (' + PRODUCTS_BY_CAT[k].length + ')</a>';
+  }).join('');
+
+  return ''
+    + '<div class="page-head" data-cmt="shopall-head" data-cmt-label="Shop All · Page heading">'
+    +   '<h1>All Products</h1>'
+    +   '<p>Browse the full Tufan catalog · ' + all.length + ' active styles across ' + Object.keys(PRODUCTS_BY_CAT).length + ' categories.</p>'
+    +   '<div style="margin-top:18px;">' + counts + '</div>'
+    + '</div>'
+    + '<section class="section" data-cmt="shopall-grid" data-cmt-label="Shop All · Product grid">'
+    +   '<div class="container">'
+    +     '<div class="product-grid">' + grid + '</div>'
+    +   '</div>'
+    + '</section>';
+}
+
+//// ============== PAGE: CATEGORY ==============
+
+function renderCategory(cat) {
+  var products = PRODUCTS_BY_CAT[cat] || [];
+  var grid = products.map(function(p, i) {
+    return productCardHTML(p, cat.toLowerCase() + '-' + (i+1));
+  }).join('');
+
+  var descByCat = {
+    'Rugs':     'Hand-knotted, hand-tufted, flatweave and power-loomed — from heirloom Persian Kilims to modern abstracts.',
+    'Pillows':  'Decorative pillows in animal print, geometric, and woven texture — sized for trade.',
+    'Pouf':     'Hand-stitched leather and woven poufs — perfect for layered floor seating.',
+    'Fountain': 'Decorative indoor fountains — cast stone finishes in grey, brown, and aged bronze.',
+    'Chairs':   'Statement seating — Monaco sofas and Nest accent chairs.'
+  };
+
+  return ''
+    + '<div class="page-head" data-cmt="cat-head-' + esc(cat) + '" data-cmt-label="' + esc(cat) + ' · Page heading">'
+    +   '<h1>' + esc(cat) + '</h1>'
+    +   '<p>' + esc(descByCat[cat] || '') + '</p>'
+    +   '<div style="margin-top:8px; font-size:13px; color:var(--c-text-mute);">' + products.length + ' styles · Login for wholesale pricing</div>'
+    + '</div>'
+    + '<section class="section" data-cmt="cat-grid-' + esc(cat) + '" data-cmt-label="' + esc(cat) + ' · Product grid">'
+    +   '<div class="container">'
+    +     '<div class="product-grid">' + grid + '</div>'
+    +   '</div>'
+    + '</section>';
+}
+
+//// ============== PAGE: ABOUT ==============
+
+function renderAbout() {
+  var aboutImg = COLLECTIONS[1].img;
+  return ''
+    + '<div class="page-head" data-cmt="about-head" data-cmt-label="About · Page heading">'
+    +   '<h1>About Tufan Rugs</h1>'
+    +   '<p>A family-run wholesale rug house — where art meets the floor.</p>'
+    + '</div>'
+
+    + '<section class="section" data-cmt="about-story" data-cmt-label="About · Our story section">'
+    +   '<div class="container">'
+    +     '<div class="about-grid">'
+    +       '<img class="about-img" src="' + esc(aboutImg) + '" alt="Tufan story" onerror="this.style.display=\'none\'">'
+    +       '<div class="about-prose">'
+    +         '<div class="eyebrow">Our Story</div>'
+    +         '<h2>Three generations of weavers, one wholesale house.</h2>'
+    +         '<p>Tufan was founded by a family of master weavers who believed beautiful, well-made rugs shouldn\'t carry retail markup. Today we work direct with artisan workshops in Iran, India, Turkey and China to bring trade buyers honestly-priced wholesale goods.</p>'
+    +         '<p>Every piece is hand-graded for quality, dye-fastness, and weave integrity before it lands in our catalog. What you see here is what shows up at your loading dock.</p>'
+    +         '<a href="#/products" class="btn btn-primary">Browse the Catalog</a>'
+    +       '</div>'
+    +     '</div>'
+
+    +     '<div class="value-grid">'
+    +       '<div class="value-card" data-cmt="about-value-1" data-cmt-label="About · Direct from artisans">'
+    +         '<div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L3 7l9 5 9-5-9-5z"/><polyline points="3 17 12 22 21 17"/><polyline points="3 12 12 17 21 12"/></svg></div>'
+    +         '<h4>Direct from artisans</h4>'
+    +         '<p>No agents, no middlemen. We work hand-in-hand with weavers across four origin countries.</p>'
+    +       '</div>'
+    +       '<div class="value-card" data-cmt="about-value-2" data-cmt-label="About · Hand-graded quality">'
+    +         '<div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>'
+    +         '<h4>Hand-graded quality</h4>'
+    +         '<p>Every roll inspected for dye-fastness, weave count, and pile integrity before it enters inventory.</p>'
+    +       '</div>'
+    +       '<div class="value-card" data-cmt="about-value-3" data-cmt-label="About · Trade-only pricing">'
+    +         '<div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>'
+    +         '<h4>Trade-only pricing</h4>'
+    +         '<p>Wholesale pricing unlocked at sign-in.</p>'
+    +       '</div>'
+    +     '</div>'
+    +   '</div>'
+    + '</section>';
+}
+
+//// ============== PAGE: CONTACT ==============
+
+function renderContact() {
+  return ''
+    + '<div class="page-head" data-cmt="contact-head" data-cmt-label="Contact · Page heading">'
+    +   '<h1>Contact Us</h1>'
+    +   '<p>Trade inquiries, freight quotes, or just hello — we usually reply within one business day.</p>'
+    + '</div>'
+
+    + '<section class="section" data-cmt="contact-body" data-cmt-label="Contact · Form section">'
+    +   '<div class="container">'
+    +     '<div class="contact-grid">'
+    +       '<form class="contact-form" data-cmt="contact-form" data-cmt-label="Contact · Inquiry form" onsubmit="event.preventDefault(); toast(\'Thanks — we will be in touch.\');">'
+    +         '<div class="field-row">'
+    +           '<div class="field"><label>First Name</label><input required type="text" placeholder="Jane"></div>'
+    +           '<div class="field"><label>Last Name</label><input required type="text" placeholder="Doe"></div>'
+    +         '</div>'
+    +         '<div class="field-row">'
+    +           '<div class="field"><label>Email</label><input required type="email" placeholder="jane@design.com"></div>'
+    +           '<div class="field"><label>Phone</label><input type="tel" placeholder="(212) 555-0123"></div>'
+    +         '</div>'
+    +         '<div class="field"><label>Company / Store</label><input type="text" placeholder="Design firm or store name"></div>'
+    +         '<div class="field"><label>Reason for Inquiry</label>'
+    +           '<select><option>Wholesale account application</option><option>Existing account question</option><option>Catalog request</option><option>Freight quote</option><option>Other</option></select></div>'
+    +         '<div class="field"><label>Your Message</label><textarea placeholder="Tell us what you need..."></textarea></div>'
+    +         '<button class="btn btn-primary" type="submit">Send Message</button>'
+    +       '</form>'
+
+    +       '<aside class="contact-info" data-cmt="contact-info" data-cmt-label="Contact · Info aside">'
+    +         '<h3>Get in touch</h3>'
+    +         '<div class="info-block"><strong>Phone</strong><div>713-988 7779</div></div>'
+    +         '<div class="info-block"><strong>Email</strong><div>tufan@tufanrugs.com</div></div>'
+    +         '<div class="info-block"><strong>Location</strong>'
+    +           '<div style="margin-bottom:10px;"><em>Dallas</em><br>10877 Sanden Dr, Dallas, TX 75238</div>'
+    +           '<div style="margin-bottom:10px;"><em>Las Vegas</em><br>WMC A330, 475 S Grand Central Pkwy #1615, Las Vegas, NV 89106</div>'
+    +           '<div><em>High Point</em><br>IHFC Gamilton 421, S Main St #700, High Point, NC 27260</div>'
+    +         '</div>'
+    +       '</aside>'
+    +     '</div>'
+    +   '</div>'
+    + '</section>';
+}
+
+//// ============== PAGE: CATALOGUES ==============
+
+function renderCatalogues() {
+  var cats = [
+    { name: 'Master Catalog 2026', img: COLLECTIONS[0].img, pages: 124, desc: 'The complete Tufan catalog · all categories' },
+    { name: 'Rugs Lookbook', img: COLLECTIONS[2].img, pages: 88, desc: 'Hand-knotted & flatweave selection' },
+    { name: 'Pillows & Accents', img: COLLECTIONS[10].img, pages: 32, desc: 'Pillows, poufs and styling pieces' },
+    { name: 'Trade Price List', img: COLLECTIONS[5].img, pages: 18, desc: 'Wholesale tier pricing · sign-in required' },
+    { name: 'Kilim Heritage', img: COLLECTIONS[2].img, pages: 56, desc: 'Persian Kilim · sourced direct from Iran' },
+    { name: 'Outdoor & Fountain', img: COLLECTIONS[14].img, pages: 28, desc: 'Cast stone fountains & outdoor pieces' }
+  ];
+  var cards = cats.map(function(c, i) {
+    return ''
+      + '<div class="catalog-card" data-cmt="cat-pdf-' + (i+1) + '" data-cmt-label="Catalogue · ' + esc(c.name) + '">'
+      +   '<div class="catalog-cover">'
+      +     '<img src="' + esc(c.img) + '" alt="' + esc(c.name) + '" loading="lazy" onerror="this.style.display=\'none\'">'
+      +     '<span class="pdf-badge">PDF · ' + c.pages + 'pp</span>'
+      +   '</div>'
+      +   '<div class="catalog-body">'
+      +     '<h4>' + esc(c.name) + '</h4>'
+      +     '<p>' + esc(c.desc) + '</p>'
+      +     '<a href="#/catalogues" class="btn btn-primary" style="padding:10px 18px; font-size:11px;">Download PDF</a>'
+      +   '</div>'
+      + '</div>';
+  }).join('');
+
+  return ''
+    + '<div class="page-head" data-cmt="catalogues-head" data-cmt-label="Catalogues · Page heading">'
+    +   '<h1>Catalogues</h1>'
+    +   '<p>Downloadable PDFs of our complete catalog. Trade account sign-in unlocks pricing sheets.</p>'
+    + '</div>'
+    + '<section class="section" data-cmt="catalogues-grid" data-cmt-label="Catalogues · PDF grid">'
+    +   '<div class="container">'
+    +     '<div class="catalog-grid">' + cards + '</div>'
+    +   '</div>'
+    + '</section>';
+}
+
+//// ============== PAGE: TRADE PROGRAM ==============
+
+function tradeBlockHTML(idPrefix) {
+  // Re-used both on home page and as the trade landing page
+  return ''
+    + '<section class="trade-block" data-cmt="' + idPrefix + '-trade" data-cmt-label="Designed for the Trade section">'
+    +   '<div class="container">'
+    +     '<h2 class="trade-headline">Designed for the <em>Trade</em></h2>'
+    +     '<p class="trade-sub">Tools, terms and pricing built for designers, dealers and hospitality buyers.</p>'
+    +     '<div class="trade-cards">'
+    +       '<div class="trade-card" data-cmt="' + idPrefix + '-trade-card-1" data-cmt-label="Trade · Tiered Trade Pricing card">'
+    +         '<div class="trade-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>'
+    +         '<h4>Tiered Trade Pricing</h4>'
+    +         '<p>Volume tiers unlock automatically as your order grows.</p>'
+    +       '</div>'
+    +       '<div class="trade-card" data-cmt="' + idPrefix + '-trade-card-2" data-cmt-label="Trade · Real-Time Inventory card">'
+    +         '<div class="trade-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>'
+    +         '<h4>Real-Time Inventory</h4>'
+    +         '<p>See exact units in stock before you quote your client.</p>'
+    +       '</div>'
+    +       '<div class="trade-card" data-cmt="' + idPrefix + '-trade-card-3" data-cmt-label="Trade · Quick Reorder Tools card">'
+    +         '<div class="trade-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><polyline points="8 12 12 8 16 12"/></svg></div>'
+    +         '<h4>Quick Reorder Tools</h4>'
+    +         '<p>Reorder previous SKUs, build packs, share carts with your team.</p>'
+    +       '</div>'
+    +     '</div>'
+    +     '<div class="trade-cta">'
+    +       '<a href="#/signup" class="btn btn-primary" data-cmt="' + idPrefix + '-trade-apply" data-cmt-label="Trade · Apply CTA">Apply for Trade Access</a>'
+    +     '</div>'
+    +   '</div>'
+    + '</section>';
+}
+
+function renderTrade() {
+  return ''
+    + '<div class="page-head" data-cmt="trade-head" data-cmt-label="Trade · Page heading">'
+    +   '<h1>Trade Program</h1>'
+    +   '<p>For interior designers, dealers, and hospitality buyers \u2014 wholesale pricing, dedicated support, and real-time inventory.</p>'
+    + '</div>'
+    + tradeBlockHTML('trade-page');
+}
+
+//// ============== PAGE: LOGIN ==============
+
+function authLogoSVG() {
+  return '<img src="assets/tufan-logo.png" alt="Tufan Rugs" style="display:block; margin:0 auto 20px; width:160px; height:auto;" />';
+}
+
+function renderLogin() {
+  return ''
+    + '<section class="auth-page" data-cmt="login-page" data-cmt-label="Login page">'
+    +   '<div class="auth-card">'
+    +     '<a href="#/" aria-label="Tufan Rugs home">' + authLogoSVG() + '</a>'
+    +     '<h1 data-cmt="login-head" data-cmt-label="Login · Heading">Welcome back</h1>'
+    +     '<p class="auth-sub">Sign in to see your tier pricing and order history.</p>'
+    +     '<form class="auth-form" data-cmt="login-form" data-cmt-label="Login · Form" onsubmit="mockLogin(event, this)">'
+    +       '<div class="field"><label>Email</label><input required type="email" id="loginEmail" placeholder="you@design.com" autocomplete="email"></div>'
+    +       '<div class="field"><label>Password</label><input required type="password" placeholder="\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022" autocomplete="current-password"></div>'
+    +       '<div class="auth-row"><label class="auth-check"><input type="checkbox"> Remember me</label><a href="#/forgot" class="auth-link">Forgot password?</a></div>'
+    +       '<button class="btn btn-primary" type="submit" style="width:100%; margin-top:8px;">Sign In</button>'
+    +     '</form>'
+    +     '<div class="auth-divider"><span>OR</span></div>'
+    +     '<div class="auth-foot">New to Tufan? <a href="#/signup" class="auth-link">Apply for a trade account \u2192</a></div>'
+    +   '</div>'
+    + '</section>';
+}
+
+// Demo-only mock login: stores a user in localStorage and routes home
+function mockLogin(ev, form) {
+  ev.preventDefault();
+  var email = (form.querySelector('input[type=email]') || {}).value || 'buyer@design.com';
+  var first = email.split('@')[0].replace(/[._-]+/g, ' ').split(' ')[0];
+  setUser({ firstName: first.charAt(0).toUpperCase() + first.slice(1), email: email, company: '' });
+  toast('Welcome back \u2014 pricing unlocked.');
+  setTimeout(function() { window.location.hash = '#/'; }, 250);
+}
+
+function mockSignup(ev, form) {
+  ev.preventDefault();
+  var v = function(sel) { var el = form.querySelector(sel); return el ? el.value : ''; };
+  setUser({
+    firstName: v('input[name=firstName]'),
+    lastName:  v('input[name=lastName]'),
+    email:     v('input[type=email]'),
+    company:   v('input[name=company]')
+  });
+  toast('Application submitted \u2014 welcome to Tufan.');
+  setTimeout(function() { window.location.hash = '#/'; }, 250);
+}
+
+//// ============== PAGE: SIGNUP ==============
+
+function renderSignup() {
+  // Customer-type / resale certificate requirement removed in V7 per feedback.
+  return ''
+    + '<section class="auth-page" data-cmt="signup-page" data-cmt-label="Signup page">'
+    +   '<div class="auth-card auth-card-wide">'
+    +     '<a href="#/" aria-label="Tufan Rugs home">' + authLogoSVG() + '</a>'
+    +     '<h1 data-cmt="signup-head" data-cmt-label="Signup · Heading">Open a Trade Account</h1>'
+    +     '<p class="auth-sub">It takes ~60 seconds. We\u2019ll review and approve within one business day.</p>'
+    +     '<form class="auth-form" data-cmt="signup-form" data-cmt-label="Signup · Form" onsubmit="mockSignup(event, this)">'
+    +       '<div class="field-row">'
+    +         '<div class="field"><label>First Name</label><input required name="firstName" type="text" placeholder="Jane" autocomplete="given-name"></div>'
+    +         '<div class="field"><label>Last Name</label><input required name="lastName" type="text" placeholder="Doe" autocomplete="family-name"></div>'
+    +       '</div>'
+    +       '<div class="field-row">'
+    +         '<div class="field"><label>Email</label><input required type="email" placeholder="you@design.com" autocomplete="email"></div>'
+    +         '<div class="field"><label>Phone</label><input type="tel" placeholder="(212) 555-0123" autocomplete="tel"></div>'
+    +       '</div>'
+    +       '<div class="field"><label>Company <span style="color:var(--c-text-mute); font-weight:400; text-transform:none; letter-spacing:0;">(optional)</span></label><input name="company" type="text" placeholder="Design firm or retail store" autocomplete="organization"></div>'
+    +       '<div class="field"><label>Password</label><input required type="password" placeholder="Create a password" autocomplete="new-password"></div>'
+    +       '<label class="auth-check" style="margin:6px 0 14px;"><input required type="checkbox"> I agree to the <a href="#/terms" class="auth-link">terms</a> and <a href="#/privacy" class="auth-link">privacy policy</a>.</label>'
+    +       '<button class="btn btn-primary" type="submit" style="width:100%;">Create Account</button>'
+    +     '</form>'
+    +     '<div class="auth-foot">Already approved? <a href="#/login" class="auth-link">Sign in \u2192</a></div>'
+    +   '</div>'
+    + '</section>';
+}
+
+//// ============== PAGE: ACCESSORIES (combined) ==============
+
+function renderAccessories() {
+  var allItems = [];
+  ACCESSORY_CATS.forEach(function(cat) {
+    (PRODUCTS_BY_CAT[cat] || []).forEach(function(p) {
+      allItems.push(Object.assign({ cat: cat }, p));
+    });
+  });
+  var counts = ACCESSORY_CATS.map(function(c) {
+    return '<a href="#/' + c.toLowerCase() + '" data-cmt="acc-filter-' + esc(c) + '" data-cmt-label="Accessories · ' + esc(c) + ' filter chip" style="display:inline-block; padding:8px 16px; margin:4px; background:#FFFFFF; border:1px solid var(--c-line); border-radius:var(--r-pill); font-family:var(--font); font-size:13px; font-weight:600; color:var(--c-ink); letter-spacing:0.4px;">' + esc(c) + ' (' + (PRODUCTS_BY_CAT[c] || []).length + ')</a>';
+  }).join('');
+  var grid = allItems.map(function(p, i) {
+    return productCardHTML(p, 'acc-' + (i+1));
+  }).join('');
+
+  return ''
+    + '<div class="page-head" data-cmt="acc-head" data-cmt-label="Accessories · Page heading">'
+    +   '<h1>Accessories</h1>'
+    +   '<p>Pillows, poufs, fountains and seating that finish the room \u2014 sized and styled to pair with our rugs.</p>'
+    +   '<div style="margin-top:14px;">' + counts + '</div>'
+    + '</div>'
+    + '<section class="section" data-cmt="acc-grid" data-cmt-label="Accessories · Combined product grid">'
+    +   '<div class="container">'
+    +     '<div class="product-grid">' + grid + '</div>'
+    +   '</div>'
+    + '</section>';
+}
+
+//// ============== PAGE: CUSTOMER CARE (consolidated) ==============
+
+function renderCustomerCare() {
+  return ''
+    + '<div class="page-head" data-cmt="cc-head" data-cmt-label="Customer Care · Page heading">'
+    +   '<h1>Customer Care</h1>'
+    +   '<p>Shipping, returns and product care \u2014 the essentials in one place.</p>'
+    + '</div>'
+    + '<section class="section" data-cmt="cc-body" data-cmt-label="Customer Care · Body">'
+    +   '<div class="container" style="max-width:880px;">'
+    +     '<div style="display:grid; gap:18px;">'
+    +       '<div style="background:var(--c-brand-tint); border-radius:var(--r-md); padding:24px 28px;">'
+    +         '<h3 style="font-family:var(--font); font-size:18px; font-weight:700; color:var(--c-ink); margin-bottom:8px;">Shipping &amp; Delivery</h3>'
+    +         '<p style="font-family:var(--font-body); font-size:14.5px; color:var(--c-text); line-height:1.7;">Standard freight ships in 5 business days from our US warehouse. Expedited and white-glove available on request \u2014 ask your account rep.</p>'
+    +       '</div>'
+    +       '<div style="background:var(--c-brand-tint); border-radius:var(--r-md); padding:24px 28px;">'
+    +         '<h3 style="font-family:var(--font); font-size:18px; font-weight:700; color:var(--c-ink); margin-bottom:8px;">Returns &amp; Replacements</h3>'
+    +         '<p style="font-family:var(--font-body); font-size:14.5px; color:var(--c-text); line-height:1.7;">30-day return window on stocked SKUs. Custom orders are final sale. Damage claims must be filed within 7 days of delivery.</p>'
+    +       '</div>'
+    +       '<div style="background:var(--c-brand-tint); border-radius:var(--r-md); padding:24px 28px;">'
+    +         '<h3 style="font-family:var(--font); font-size:18px; font-weight:700; color:var(--c-ink); margin-bottom:8px;">Product Care</h3>'
+    +         '<p style="font-family:var(--font-body); font-size:14.5px; color:var(--c-text); line-height:1.7;">Vacuum monthly on the lowest setting. Spot clean spills immediately with cool water. Rotate quarterly to even wear. Material-specific care notes are on each product page.</p>'
+    +       '</div>'
+    +       '<div style="text-align:center; padding-top:8px;">'
+    +         '<p style="font-family:var(--font-body); font-size:14px; color:var(--c-text-mute);">Still have a question? <a href="#/contact" style="color:var(--c-brand); font-weight:600;">Contact us \u2192</a></p>'
+    +       '</div>'
+    +     '</div>'
+    +   '</div>'
+    + '</section>';
+}
+
+//// ============== PAGE: SHIPPING & DELIVERY (V8) ==============
+
+function renderShipping() {
+  return ''
+    + '<div class="page-head" data-cmt="ship-head" data-cmt-label="Shipping &amp; Delivery · Page heading">'
+    +   '<h1>Shipping &amp; Delivery</h1>'
+    +   '<p>How we move Tufan goods from our warehouse to your floor.</p>'
+    + '</div>'
+    + '<section class="section" data-cmt="ship-body" data-cmt-label="Shipping &amp; Delivery · Body">'
+    +   '<div class="container" style="max-width:780px;">'
+    +     '<p style="font-family:var(--font-body); font-size:15.5px; color:var(--c-text); line-height:1.85; margin-bottom:14px;">Standard ground freight ships within 5 business days from our US warehouse on every stocked SKU. Tracking and an estimated delivery window are emailed the moment your order leaves the dock.</p>'
+    +     '<p style="font-family:var(--font-body); font-size:15.5px; color:var(--c-text); line-height:1.85; margin-bottom:14px;">For oversize orders or palletized loads, we coordinate liftgate, residential, and inside-delivery service through our LTL partners. Expedited and white-glove options are available on request \u2014 ask your account rep.</p>'
+    +     '<p style="font-family:var(--font-body); font-size:15.5px; color:var(--c-text); line-height:1.85; margin-bottom:24px;">International trade buyers can opt into consolidated container shipments from origin (Iran, India, Turkey, China) at a transparent per-unit landed cost. We handle customs paperwork end-to-end.</p>'
+    +     '<p style="font-family:var(--font-body); font-size:14px; color:var(--c-text-mute);">Questions on a specific lane or order? <a href="#/contact" style="color:var(--c-brand); font-weight:600;">Contact us \u2192</a></p>'
+    +   '</div>'
+    + '</section>';
+}
+
+//// ============== PAGE: RETURNS & REPLACEMENTS (V8) ==============
+
+function renderReturns() {
+  return ''
+    + '<div class="page-head" data-cmt="ret-head" data-cmt-label="Returns &amp; Replacements · Page heading">'
+    +   '<h1>Returns &amp; Replacements</h1>'
+    +   '<p>Our policy on returns, damage claims and replacements for trade orders.</p>'
+    + '</div>'
+    + '<section class="section" data-cmt="ret-body" data-cmt-label="Returns &amp; Replacements · Body">'
+    +   '<div class="container" style="max-width:780px;">'
+    +     '<p style="font-family:var(--font-body); font-size:15.5px; color:var(--c-text); line-height:1.85; margin-bottom:14px;">Stocked SKUs carry a 30-day return window from the date your shipment is delivered. Items must be unused, in original packaging, and accompanied by your Tufan order number to qualify for a full refund or credit.</p>'
+    +     '<p style="font-family:var(--font-body); font-size:15.5px; color:var(--c-text); line-height:1.85; margin-bottom:14px;">Custom and made-to-order pieces are final sale because they are produced for you alone. We share dye lots, dimensions, and material samples before production so you can sign off with confidence.</p>'
+    +     '<p style="font-family:var(--font-body); font-size:15.5px; color:var(--c-text); line-height:1.85; margin-bottom:24px;">Damage in transit? File a claim with photos within 7 days of delivery and we will dispatch a replacement or issue a credit \u2014 no back-and-forth, no restocking fees.</p>'
+    +     '<p style="font-family:var(--font-body); font-size:14px; color:var(--c-text-mute);">Need to start a return or claim? <a href="#/contact" style="color:var(--c-brand); font-weight:600;">Contact us \u2192</a></p>'
+    +   '</div>'
+    + '</section>';
+}
+
+//// ============== PAGE: PRODUCT CARE (V8) ==============
+
+function renderCare() {
+  return ''
+    + '<div class="page-head" data-cmt="care-head" data-cmt-label="Product Care · Page heading">'
+    +   '<h1>Product Care</h1>'
+    +   '<p>Simple routines to keep your Tufan pieces looking new for years.</p>'
+    + '</div>'
+    + '<section class="section" data-cmt="care-body" data-cmt-label="Product Care · Body">'
+    +   '<div class="container" style="max-width:780px;">'
+    +     '<p style="font-family:var(--font-body); font-size:15.5px; color:var(--c-text); line-height:1.85; margin-bottom:14px;">Vacuum your rug monthly on the lowest suction setting without a beater bar. For high-traffic showroom areas, a weekly pass keeps fibers lofted and prevents matting at entry points.</p>'
+    +     '<p style="font-family:var(--font-body); font-size:15.5px; color:var(--c-text); line-height:1.85; margin-bottom:14px;">Spot clean spills immediately by blotting (never rubbing) with a clean white cloth and cool water. For wool and silk pile, avoid steam cleaning and harsh chemicals \u2014 a damp cloth and mild soap is almost always enough.</p>'
+    +     '<p style="font-family:var(--font-body); font-size:15.5px; color:var(--c-text); line-height:1.85; margin-bottom:24px;">Rotate the rug 180\u00b0 every three months so foot traffic and sunlight wear it evenly. Material-specific care notes (wool, silk, polyester, jute) are printed on the care card shipped with every order and listed on each product page.</p>'
+    +     '<p style="font-family:var(--font-body); font-size:14px; color:var(--c-text-mute);">Need help with a specific stain or fiber? <a href="#/contact" style="color:var(--c-brand); font-weight:600;">Contact us \u2192</a></p>'
+    +   '</div>'
+    + '</section>';
+}
+
+//// ============== PAGE: PRODUCT DETAIL ==============
+
+function findProductBySku(sku) {
+  var cats = Object.keys(PRODUCTS_BY_CAT);
+  for (var i = 0; i < cats.length; i++) {
+    var found = PRODUCTS_BY_CAT[cats[i]].find(function(p) { return p.sku === sku; });
+    if (found) return Object.assign({ cat: cats[i] }, found);
+  }
+  return null;
+}
+
+function renderProduct(sku) {
+  var p = findProductBySku(sku);
+  if (!p) {
+    return '<div class="page-head"><h1>Product not found</h1><p>The SKU "' + esc(sku) + '" isn\u2019t in the catalog. <a href="#/rugs" style="color:var(--c-brand);">Back to rugs \u2192</a></p></div>';
+  }
+
+  // Build crumb path: Home / Category / Collection / Product
+  var catRoute = (ACCESSORY_CATS.indexOf(p.cat) > -1) ? '#/accessories' : '#/' + p.cat.toLowerCase();
+  var crumb = ''
+    + '<div class="breadcrumb" data-cmt="pdp-crumb" data-cmt-label="PDP · Breadcrumb">'
+    +   '<a href="#/">Home</a><span class="sep">/</span>'
+    +   '<a href="' + catRoute + '">' + esc(p.cat) + '</a><span class="sep">/</span>'
+    +   (p.coll ? '<a href="' + catRoute + '">' + esc(p.coll) + '</a><span class="sep">/</span>' : '')
+    +   '<span class="current">' + esc(p.name) + '</span>'
+    + '</div>';
+
+  // Related: 4 other items from same category
+  var related = (PRODUCTS_BY_CAT[p.cat] || [])
+    .filter(function(x) { return x.sku !== p.sku; })
+    .slice(0, 4)
+    .map(function(rp, i) { return productCardHTML(rp, 'pdp-related-' + (i+1)); })
+    .join('');
+
+  // Gallery thumbnails — reuse main image 4× for the prototype
+  var thumbs = [0,1,2,3].map(function(i) {
+    return '<div class="pdp-thumb' + (i===0 ? ' active' : '') + '" data-cmt="pdp-thumb-' + (i+1) + '" data-cmt-label="PDP · Thumbnail ' + (i+1) + '"><img src="' + esc(p.img) + '" alt="' + esc(p.name) + ' view ' + (i+1) + '"></div>';
+  }).join('');
+
+  var accessHref = getUser() ? '#/cart' : '#/login';
+
+  return ''
+    + '<main class="pdp-wrap" data-cmt="pdp" data-cmt-label="PDP · ' + esc(p.name) + '">'
+    +   crumb
+    +   '<div class="pdp-grid">'
+    +     '<section class="pdp-gallery">'
+    +       '<div class="pdp-main-img" data-cmt="pdp-main-img" data-cmt-label="PDP · Main image">'
+    +         '<img src="' + esc(p.img) + '" alt="' + esc(p.name) + '" loading="eager" onerror="this.style.display=\'none\'">'
+    +       '</div>'
+    +       '<div class="pdp-thumbs">' + thumbs + '</div>'
+    +     '</section>'
+    +     '<section class="pdp-info">'
+    +       '<div class="pdp-collection" data-cmt="pdp-coll" data-cmt-label="PDP · Collection eyebrow">' + esc(p.coll || p.cat) + '</div>'
+    +       '<h1 class="pdp-title" data-cmt="pdp-title" data-cmt-label="PDP · Title">' + esc(p.name) + '</h1>'
+    +       '<div class="pdp-sku">SKU: ' + esc(p.sku) + '</div>'
+    +       '<p class="pdp-desc" data-cmt="pdp-desc" data-cmt-label="PDP · Description">Hand-crafted in ' + esc(p.origin || 'an artisan workshop') + ', this piece is part of our <strong>' + esc(p.coll || p.cat) + '</strong> series and a staple choice for residential, hospitality and showroom projects. Each unit is photographed individually before shipping so the rug you see is the rug you receive.</p>'
+    +       '<div class="pdp-cta-row" data-cmt="pdp-cta" data-cmt-label="PDP · CTA row">'
+    +         '<a href="' + accessHref + '" class="btn btn-primary btn-sm">Access Pricing</a>'
+    +         '<a href="#/wishlist" class="btn btn-ghost btn-sm" aria-label="Save to wishlist" title="Save to wishlist">'
+    +           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>'
+    +         '</a>'
+    +       '</div>'
+    +       '<dl class="pdp-specs" data-cmt="pdp-specs" data-cmt-label="PDP · Specifications">'
+    +         '<dt>Origin</dt><dd>' + esc(p.origin || '—') + '</dd>'
+    +         '<dt>Material</dt><dd>' + esc(p.mat || '—') + '</dd>'
+    +         '<dt>Collection</dt><dd>' + esc(p.coll || '—') + '</dd>'
+    +         '<dt>Category</dt><dd>' + esc(p.cat) + '</dd>'
+    +         '<dt>Lead time</dt><dd>Ships in 5 business days</dd>'
+    +       '</dl>'
+    +     '</section>'
+    +   '</div>'
+    +   (related
+          ? '<section class="pdp-related" data-cmt="pdp-related" data-cmt-label="PDP · Related products"><h3>You may also like</h3><div class="product-grid">' + related + '</div></section>'
+          : '')
+    + '</main>';
+}
+
+//// ============== PAGE: ACCOUNT (logged-in landing) ==============
+
+function renderAccount() {
+  var u = getUser();
+  if (!u) { window.location.hash = '#/login'; return ''; }
+  return ''
+    + '<section class="auth-page" data-cmt="acct-page" data-cmt-label="Account · Logged-in landing">'
+    +   '<div class="auth-card auth-card-wide" style="text-align:center;">'
+    +     '<a href="#/" aria-label="Tufan Rugs home">' + authLogoSVG() + '</a>'
+    +     '<h1>Welcome' + (u.firstName ? ', ' + esc(u.firstName) : '') + '</h1>'
+    +     '<p class="auth-sub">You\u2019re signed in as <strong>' + esc(u.email || '\u2014') + '</strong>' + (u.company ? ' \u00b7 ' + esc(u.company) : '') + '.</p>'
+    +     '<div style="display:flex; gap:12px; justify-content:center; margin-top:18px; flex-wrap:wrap;">'
+    +       '<a href="#/rugs" class="btn btn-primary">Browse Rugs</a>'
+    +       '<a href="#/accessories" class="btn btn-ghost">Browse Accessories</a>'
+    +       '<button class="btn btn-ghost" onclick="logout(); refreshAcctChip(); window.location.hash=\'#/\';" type="button">Sign out</button>'
+    +     '</div>'
+    +   '</div>'
+    + '</section>';
+}
+
+//// ============== NAV BUILD ==============
+
+(function buildNav() {
+  var wrap = document.getElementById('navLinks');
+  NAV.forEach(function(n, i) {
+    var a = document.createElement('a');
+    a.href = n.href;
+    a.textContent = n.label;
+    a.setAttribute('data-cmt', 'nav-' + (i+1));
+    a.setAttribute('data-cmt-label', 'Nav link · ' + n.label);
+    wrap.appendChild(a);
+  });
+})();
+
+//// ============== COMMENT SYSTEM ==============
+
+var STORE_KEY = 'tufan-comments-v5';
+var STATUS_LABELS = { approved: 'Approved', change: 'Needs change', question: 'Question', remove: 'Remove' };
+var STATUS_CLASS  = { approved: 's-approved', change: 's-change', question: 's-question', remove: 's-remove' };
+
+function loadAll() {
+  try { return JSON.parse(localStorage.getItem(STORE_KEY) || '{}'); } catch (e) { return {}; }
+}
+function saveAll(obj) {
+  try { localStorage.setItem(STORE_KEY, JSON.stringify(obj)); } catch (e) {}
+}
+function getFor(id) { var all = loadAll(); return all[id] || []; }
+function setFor(id, list) {
+  var all = loadAll();
+  if (list && list.length) all[id] = list; else delete all[id];
+  saveAll(all);
+}
+
+function pinSVG() {
+  return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>';
+}
+
+function attachPins() {
+  $$('[data-cmt]').forEach(function(el) {
+    if (el.querySelector(':scope > .cmt-pin')) return;
+    // SKIP pins on buttons/inputs/anchors that are interactive controls
+    var tag = el.tagName.toLowerCase();
+    if (tag === 'button' || tag === 'input' || tag === 'select' || tag === 'textarea') return;
+    var pin = document.createElement('button');
+    pin.type = 'button';
+    pin.className = 'cmt-pin';
+    pin.innerHTML = pinSVG();
+    pin.setAttribute('aria-label', 'Review · ' + (el.getAttribute('data-cmt-label') || el.getAttribute('data-cmt')));
+    pin.setAttribute('title', 'Review · ' + (el.getAttribute('data-cmt-label') || el.getAttribute('data-cmt')));
+    pin.onclick = function(ev) {
+      ev.stopPropagation();
+      ev.preventDefault();
+      openModal(el.getAttribute('data-cmt'), el.getAttribute('data-cmt-label') || el.getAttribute('data-cmt'));
+    };
+    el.appendChild(pin);
+  });
+}
+
+function refreshAllPins() {
+  $$('[data-cmt]').forEach(function(el) {
+    var id = el.getAttribute('data-cmt');
+    var pin = el.querySelector(':scope > .cmt-pin');
+    if (!pin) return;
+    var list = getFor(id);
+    pin.classList.remove('has-comments', 's-approved', 's-change', 's-question', 's-remove');
+    if (!list.length) return;
+    pin.classList.add('has-comments');
+    // Use color of MOST RECENT comment
+    var last = list[list.length - 1];
+    pin.classList.add(STATUS_CLASS[last.status] || '');
+  });
+  updateFabCount();
+}
+
+function updateFabCount() {
+  var all = loadAll();
+  var n = 0;
+  for (var k in all) n += all[k].length;
+  document.getElementById('cmtFabCount').textContent = n;
+}
+
+var currentId = null, currentLabel = null;
+
+function openModal(id, label) {
+  currentId = id;
+  currentLabel = label;
+  document.getElementById('cmtTarget').textContent = label;
+  document.getElementById('cmtText').value = '';
+  document.getElementById('cmtStatus').value = 'approved';
+  var nameField = document.getElementById('cmtName');
+  try { nameField.value = localStorage.getItem('tufan-reviewer-name') || ''; } catch (e) {}
+  renderExisting(id);
+  document.getElementById('cmtModal').classList.add('open');
+  setTimeout(function() { document.getElementById('cmtText').focus(); }, 50);
+}
+
+function closeModal() {
+  var modal = document.getElementById('cmtModal');
+  modal.classList.remove('open');
+  // Ensure body interaction restored in case any styles toggled it
+  document.body.style.overflow = '';
+  currentId = null;
+  currentLabel = null;
+}
+
+function renderExisting(id) {
+  var wrap = document.getElementById('cmtExisting');
+  var list = getFor(id);
+  if (!list.length) { wrap.innerHTML = '<div style="font-size:12px; color:var(--c-text-mute); margin-top:8px;">No comments on this element yet.</div>'; return; }
+  wrap.innerHTML = list.map(function(c, i) {
+    return ''
+      + '<div class="ex">'
+      +   '<header>'
+      +     '<span class="ex-status" style="color:' + statusColor(c.status) + ';">' + STATUS_LABELS[c.status] + '</span>'
+      +     '<span>· ' + esc(c.name || 'Anonymous') + ' · ' + new Date(c.ts).toLocaleString() + ' '
+      +     '<button class="ex-delete" data-i="' + i + '">delete</button></span>'
+      +   '</header>'
+      +   '<div>' + esc(c.text) + '</div>'
+      + '</div>';
+  }).join('');
+  wrap.querySelectorAll('.ex-delete').forEach(function(btn) {
+    btn.onclick = function() {
+      var i = parseInt(btn.getAttribute('data-i'), 10);
+      var list = getFor(currentId);
+      list.splice(i, 1);
+      setFor(currentId, list);
+      renderExisting(currentId);
+      refreshAllPins();
+      toast('Comment deleted');
+    };
+  });
+}
+
+function statusColor(s) {
+  return ({approved: '#16a34a', change: '#f59e0b', question: '#2563eb', remove: '#dc2626'})[s] || '#1A1A1A';
+}
+
+function saveComment() {
+  if (!currentId) return;
+  var text = document.getElementById('cmtText').value.trim();
+  if (!text) { toast('Add a comment first'); document.getElementById('cmtText').focus(); return; }
+  var name = document.getElementById('cmtName').value.trim() || 'Anonymous';
+  var status = document.getElementById('cmtStatus').value;
+  try { localStorage.setItem('tufan-reviewer-name', name); } catch (e) {}
+  var savedId = currentId;
+  var list = getFor(savedId);
+  list.push({
+    id: 'c_' + Date.now() + '_' + Math.floor(Math.random() * 9999),
+    status: status, name: name, text: text,
+    label: currentLabel, ts: new Date().toISOString()
+  });
+  setFor(savedId, list);
+  refreshAllPins();
+  // V7 UX: dismiss modal, restore body scroll, return focus to the original
+  // element so the reviewer's cursor is back on the website.
+  closeModal();
+  // Drop any lingering focus inside the modal and put it back on the page
+  if (document.activeElement && typeof document.activeElement.blur === 'function') {
+    document.activeElement.blur();
+  }
+  var targetEl = document.querySelector('[data-cmt="' + (window.CSS && CSS.escape ? CSS.escape(savedId) : savedId) + '"]');
+  if (targetEl) {
+    // Avoid auto-scroll-jump; just refocus
+    if (typeof targetEl.focus === 'function') {
+      targetEl.setAttribute('tabindex', '-1');
+      try { targetEl.focus({ preventScroll: true }); } catch (e) { targetEl.focus(); }
+    }
+  } else {
+    document.body.focus && document.body.focus();
+  }
+  toast('Saved \u00b7 ' + (STATUS_LABELS[status] || status));
+}
+
+function exportJson() {
+  var all = loadAll();
+  var flat = [];
+  for (var id in all) {
+    all[id].forEach(function(c) {
+      flat.push({
+        element_id: id,
+        element_label: c.label,
+        comment_id: c.id,
+        status: c.status,
+        name: c.name,
+        text: c.text,
+        timestamp: c.ts
+      });
+    });
+  }
+  var payload = {
+    project: 'Tufan Rugs · Wholesale Catalog Prototype',
+    source: 'Cowork review session',
+    exported_at: new Date().toISOString(),
+    total_comments: flat.length,
+    counts_by_status: flat.reduce(function(acc, c) {
+      acc[c.status] = (acc[c.status] || 0) + 1; return acc;
+    }, {}),
+    comments: flat
+  };
+  var blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = 'tufan-rugs-review-comments-' + new Date().toISOString().slice(0, 10) + '.json';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(function() { URL.revokeObjectURL(url); }, 1000);
+  toast(flat.length ? ('Exported ' + flat.length + ' comments') : 'No comments yet — exported empty file');
+}
+
+var toastT;
+function toast(msg) {
+  var t = document.getElementById('cmtToast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastT);
+  toastT = setTimeout(function() { t.classList.remove('show'); }, 2200);
+}
+
+//// ============== FONT TOGGLE ==============
+
+(function wireFontToggle() {
+  $$('.font-toggle button').forEach(function(b) {
+    b.onclick = function() {
+      var f = b.getAttribute('data-font');
+      document.documentElement.setAttribute('data-font', f);
+      try { localStorage.setItem('tufan-font', f); } catch (e) {}
+      $$('.font-toggle button').forEach(function(x) { x.classList.remove('active'); });
+      b.classList.add('active');
+    };
+  });
+  try {
+    var f = localStorage.getItem('tufan-font');
+    if (f) {
+      document.documentElement.setAttribute('data-font', f);
+      $$('.font-toggle button').forEach(function(x) { x.classList.toggle('active', x.getAttribute('data-font') === f); });
+    }
+  } catch (e) {}
+})();
+
+//// ============== INIT ==============
+
+document.getElementById('cmtFab').addEventListener('click', exportJson);
+document.getElementById('cmtCancel').addEventListener('click', closeModal);
+document.getElementById('cmtSave').addEventListener('click', saveComment);
+document.getElementById('cmtModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape' && document.getElementById('cmtModal').classList.contains('open')) closeModal();
+});
+
+// First render
+navigate();
+
+</script>
+</body>
+</html>
