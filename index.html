@@ -516,7 +516,7 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
 .contact-info .info-block strong { display: block; font-size: 12px; color: var(--c-brand); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
 .contact-info .info-block div { font-size: 15px; color: var(--c-ink); }
 
-/* ===== CATALOGUES PAGE ===== */
+/* ===== CATALOGS PAGE ===== */
 .catalog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
 .catalog-card {
   background: #FFFFFF; border: 1px solid var(--c-line);
@@ -568,11 +568,11 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
   .philo-img { height: 320px; }
 }
 
-/* ===== DESIGNED FOR THE TRADE (V7: smaller / tighter) ===== */
+/* ===== DESIGNED FOR THE TRADE (V9: ~1 inch larger overall) ===== */
 .trade-block {
   background: #1A1A1A;
   color: #FFFFFF;
-  padding: 48px 32px 52px;
+  padding: 96px 32px 100px;
   position: relative;
 }
 .trade-block .container { max-width: var(--container); margin: 0 auto; }
@@ -628,6 +628,264 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
 }
 .trade-cta { text-align: center; }
 .trade-cta .btn { padding: 12px 28px; font-size: 12px; }
+
+/* ===== PDP TEAR-SHEET DOWNLOAD (V10: top-right corner) ===== */
+.pdp-wrap { position: relative; }
+.pdp-download {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #FFFFFF;
+  border: 1px solid #D9D6D2;
+  border-radius: var(--r-sm);
+  padding: 9px 14px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  color: var(--c-text);
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.15s ease;
+}
+.pdp-download:hover {
+  border-color: var(--c-brand);
+  color: var(--c-brand);
+}
+.pdp-download svg { width: 14px; height: 14px; }
+@media (max-width: 760px) {
+  .pdp-download { position: static; margin: 12px 0; }
+  .pdp-download span { display: inline; }
+}
+
+/* ===== PDP SIZES (V9: variants selector) ===== */
+.pdp-sizes {
+  margin: 18px 0 22px;
+}
+.pdp-sizes-label {
+  font-family: var(--font-body);
+  font-size: 12px; text-transform: uppercase;
+  letter-spacing: 1.2px; color: var(--c-text-mute);
+  margin-bottom: 10px;
+}
+.pdp-sizes-sel {
+  color: var(--c-text); font-weight: 700;
+  letter-spacing: 0.4px; margin-left: 6px;
+  text-transform: none;
+}
+.pdp-size-pills {
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+.pdp-size-pill {
+  font-family: var(--font-body);
+  font-size: 12px; font-weight: 600;
+  padding: 9px 14px;
+  background: #FFFFFF;
+  border: 1px solid #D9D6D2;
+  border-radius: var(--r-sm);
+  color: var(--c-text);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.pdp-size-pill:hover { border-color: var(--c-brand); }
+.pdp-size-pill.active {
+  background: var(--c-brand);
+  border-color: var(--c-brand);
+  color: #FFFFFF;
+}
+
+/* ===== WISHLIST TOAST BANNER (V10) ===== */
+.wish-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: #1A1A1A;
+  color: #FFFFFF;
+  padding: 14px 14px 14px 20px;
+  border-radius: var(--r-md);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  letter-spacing: 0.2px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 9999;
+  max-width: calc(100vw - 32px);
+}
+.wish-toast.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+.wish-toast .wt-msg { line-height: 1.4; }
+.wish-toast .wt-close {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 999px;
+  width: 28px; height: 28px;
+  padding: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.wish-toast .wt-close:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.5); }
+.wish-toast .wt-close svg { width: 14px; height: 14px; }
+
+/* ===== WISHLIST PAGE (V9 + V10 multi-list) ===== */
+.wish-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.wish-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.wish-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #FFFFFF;
+  border: 1px solid #D9D6D2;
+  border-radius: var(--r-sm);
+  padding: 8px 14px;
+  font-family: var(--font-body);
+  font-size: 13px; font-weight: 600;
+  color: var(--c-text);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.wish-tab:hover { border-color: var(--c-brand); }
+.wish-tab.active {
+  background: var(--c-brand);
+  border-color: var(--c-brand);
+  color: #FFFFFF;
+}
+.wish-tab .wt-count {
+  background: rgba(0,0,0,0.08);
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.wish-tab.active .wt-count { background: rgba(255,255,255,0.2); }
+.wish-create {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.wish-create input {
+  font-family: var(--font-body);
+  font-size: 13px;
+  padding: 9px 12px;
+  border: 1px solid #D9D6D2;
+  border-radius: var(--r-sm);
+  width: 280px;
+  max-width: 100%;
+  background: #FFF8C6;
+}
+.wish-create input:focus { outline: none; border-color: var(--c-brand); }
+.wish-active-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  color: var(--c-text);
+}
+.wish-list-delete {
+  background: transparent;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--c-text-mute);
+  cursor: pointer;
+  letter-spacing: 0.4px;
+  padding: 4px 8px;
+}
+.wish-list-delete:hover { color: #B22222; text-decoration: underline; }
+.wish-empty {
+  background: #FFFFFF;
+  border: 1px dashed #D9D6D2;
+  border-radius: var(--r-md);
+  padding: 40px 24px;
+  text-align: center;
+  font-family: var(--font-body);
+  color: var(--c-text-mute);
+}
+.wish-empty p { margin: 0; }
+@media (max-width: 720px) {
+  .wish-toolbar { flex-direction: column; align-items: stretch; }
+  .wish-create input { width: 100%; }
+}
+/* (old wishlist CSS) */
+.wish-table {
+  background: #FFFFFF;
+  border: 1px solid #EEEEEE;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  max-width: 980px; margin: 0 auto;
+}
+.wish-row {
+  display: grid;
+  grid-template-columns: 120px 1fr auto;
+  gap: 22px;
+  padding: 20px 24px;
+  align-items: center;
+  border-bottom: 1px solid #EEEEEE;
+}
+.wish-row:last-child { border-bottom: none; }
+.wish-img { display: block; width: 120px; height: 120px; border-radius: var(--r-sm); overflow: hidden; background: var(--c-surface-alt); }
+.wish-img img { width: 100%; height: 100%; object-fit: cover; }
+.wish-info { min-width: 0; }
+.wish-coll {
+  font-family: var(--font-body);
+  font-size: 11px; text-transform: uppercase;
+  letter-spacing: 1.3px; color: var(--c-brand);
+  margin-bottom: 6px;
+}
+.wish-name {
+  display: block;
+  font-family: var(--font); font-size: 18px;
+  font-weight: 700; color: var(--c-text);
+  text-decoration: none;
+  margin-bottom: 4px;
+}
+.wish-name:hover { color: var(--c-brand); }
+.wish-sku {
+  font-family: var(--font-body);
+  font-size: 12px; color: var(--c-text-mute);
+}
+.wish-actions {
+  display: flex; flex-direction: column;
+  align-items: flex-end; gap: 8px;
+}
+.wish-remove {
+  font-family: var(--font-body);
+  font-size: 11px; color: var(--c-text-mute);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+.wish-remove:hover { color: var(--c-brand); text-decoration: underline; }
+@media (max-width: 720px) {
+  .wish-row { grid-template-columns: 80px 1fr; }
+  .wish-img { width: 80px; height: 80px; }
+  .wish-actions { grid-column: 1 / -1; flex-direction: row; justify-content: space-between; }
+}
 
 /* ===== AUTH PAGES (LOGIN/SIGNUP) ===== */
 .auth-page {
@@ -1118,7 +1376,7 @@ h4[data-cmt] > .cmt-pin, p[data-cmt] > .cmt-pin {
       <h4>Company</h4>
       <ul>
         <li><a href="#/about">About Us</a></li>
-        <li><a href="#/catalogues">Catalogues</a></li>
+        <li><a href="#/catalogs">Catalogs</a></li>
         <li><a href="#/trade">Trade Program</a></li>
       </ul>
     </div>
@@ -1196,6 +1454,9 @@ h4[data-cmt] > .cmt-pin, p[data-cmt] > .cmt-pin {
 <!-- ============== TOAST ============== -->
 <div class="cmt-toast" id="cmtToast"></div>
 
+<!-- ============== WISHLIST TOAST (V10) ============== -->
+<div class="wish-toast" id="wishToast" role="status" aria-live="polite"></div>
+
 <script>
 
 var PRODUCTS_BY_CAT = {"Rugs":[{"sku":"EBA-01-5077GR.MU","name":"Ebano","coll":"Ebano","origin":"China","mat":"100% Polyester","img":"https://fileserver-g-p.sourcerer.tech/files/df138c4a-db0c-4cbf-8d29-d7b185cfb58f"},{"sku":"CRO-P-9012SI.BE","name":"Cross Premium","coll":"Cross Premium","origin":"China","mat":"100% Polyester","img":"https://fileserver-g-p.sourcerer.tech/files/54e17fad-d546-4061-87b4-56faa6a77a11"},{"sku":"ARTEMISA 224","name":"Artemisa","coll":"Artemisa","origin":"Iran","mat":"80% Wool, 20% Cotton","img":"https://fileserver-g-p.sourcerer.tech/files/7d4c555b-e0b8-41f9-8697-f7b08c892c06"},{"sku":"ECH-02-8010PURP","name":"Echo","coll":"Echo","origin":"China","mat":"100% Polyester","img":"https://fileserver-g-p.sourcerer.tech/files/fba2fbbc-d92c-4aa7-b1f9-da48e249165b"},{"sku":"IKG0000161","name":"Kilim Gabbeh","coll":"Kilim Gabbeh","origin":"Iran","mat":"100% Wool","img":"https://fileserver-g-p.sourcerer.tech/files/c1bb2a45-0e6b-4e43-a1ec-4cc56c6b5570"},{"sku":"IKS0000414","name":"Kilim Shiraz","coll":"Kilim Shiraz","origin":"Iran","mat":"100% Wool","img":"https://fileserver-g-p.sourcerer.tech/files/6743cef0-3390-4ef2-ad7a-c2e23ea6e97d"},{"sku":"BOH-01-79105GR.SI","name":"Bohem","coll":"Bohem","origin":"Turkey","mat":"100% Polyester","img":"https://fileserver-g-p.sourcerer.tech/files/4ff0e0d2-1f66-446d-abe3-34e1c69a1ec7"},{"sku":"VIR-07-2436IVOR","name":"Vira","coll":"Vira","origin":"India","mat":"80% Viscose, 20% Cotton","img":"https://fileserver-g-p.sourcerer.tech/files/e42f3488-d4ef-4d7c-86bc-10ed402b1289"},{"sku":"SER-03-5380BROW","name":"Serenity","coll":"Serenity","origin":"India","mat":"70% Viscose, 30% Cotton","img":"https://fileserver-g-p.sourcerer.tech/files/4e7dab55-9922-4373-9fe0-df68763317be"},{"sku":"GAM9012BEIG","name":"Gamma","coll":"Gamma","origin":"India","mat":"100% Polyester","img":"https://fileserver-g-p.sourcerer.tech/files/cee5ab9d-3ad9-498e-8790-2cb2c6478d5f"},{"sku":"ENI-02-1115GOLD","name":"Enigma","coll":"Enigma","origin":"Turkey","mat":"52% Viscose, 21% Acrylic, 16% Polyester,","img":"https://fileserver-g-p.sourcerer.tech/files/095ef24c-b250-4ca7-ad38-cfbe82823592"},{"sku":"TOL-01-5077BLUE","name":"Toledo","coll":"Toledo","origin":"Turkey","mat":"","img":"https://fileserver-g-p.sourcerer.tech/files/2124020b-d1ba-4315-b380-865c3e225aa4"}],"Pillows":[{"sku":"P-ZEB1414TAN","name":"Zebra Pillow","coll":"Zebra Pillow","origin":"India","mat":"","img":"https://fileserver-g-p.sourcerer.tech/files/cd76f017-64e7-43b4-a8c1-c54d655c58a6"},{"sku":"P-TIG1414SAND","name":"Tiger Pillow","coll":"Tiger Pillow","origin":"India","mat":"","img":"https://fileserver-g-p.sourcerer.tech/files/1aabc0e9-11c4-4e6b-82e8-6249c17a6416"},{"sku":"P-DAL2020GR.BL","name":"Dallas Pillow","coll":"Dallas Pillow","origin":"China","mat":"100% Polyester","img":"https://fileserver-g-p.sourcerer.tech/files/e170a3fd-3042-4f27-8419-6dee320ea7a3"},{"sku":"P-JAZ2020IVOR","name":"Jazmin Pillow","coll":"Jazmin Pillow","origin":"India","mat":"80% Polyester, 20% Cotton","img":"https://fileserver-g-p.sourcerer.tech/files/f76782e0-bedf-4747-9742-f9a47a432f22"},{"sku":"P-DUR2020ORAN","name":"Duran.B Pillow","coll":"Duran.B Pillow","origin":"China","mat":"100% Polyester","img":"https://fileserver-g-p.sourcerer.tech/files/17867ae8-ebbd-4fde-8c60-6dec7f528cc3"},{"sku":"P-FUZ2020SILV","name":"Fuzz Pillow","coll":"Fuzz Pillow","origin":"China","mat":"100% Polyester","img":"https://fileserver-g-p.sourcerer.tech/files/7a38fca4-b822-41a8-8ec3-92e35b476703"},{"sku":"P-TIG1414TAN","name":"Tiger Pillow","coll":"Tiger Pillow","origin":"India","mat":"","img":"https://fileserver-g-p.sourcerer.tech/files/45f79959-859c-44ad-a53c-62bfea286006"},{"sku":"P-JAZ2020GREE","name":"Jazmin Pillow","coll":"Jazmin Pillow","origin":"India","mat":"80% Polyester, 20% Cotton","img":"https://fileserver-g-p.sourcerer.tech/files/981b3df5-3539-478c-b559-93f96870bcf9"},{"sku":"P-DAL2020BROW","name":"Dallas Pillow","coll":"Dallas Pillow","origin":"China","mat":"100% Polyester","img":"https://fileserver-g-p.sourcerer.tech/files/d65d688c-7f98-4194-84c8-89bd7fbcc720"},{"sku":"P-DAL2020EGGP","name":"Dallas Pillow","coll":"Dallas Pillow","origin":"China","mat":"100% Polyester","img":"https://fileserver-g-p.sourcerer.tech/files/4125f1d3-edc8-4fcc-aba2-27f80854834e"},{"sku":"P-DUR2020CHOC","name":"Duran.B Pillow","coll":"Duran.B Pillow","origin":"China","mat":"100% Polyester","img":"https://fileserver-g-p.sourcerer.tech/files/bb9c6557-7419-41a5-a069-0d313a98a28a"},{"sku":"P-DAL2020BK.WH","name":"Dallas Pillow","coll":"Dallas Pillow","origin":"China","mat":"100% Polyester","img":"https://fileserver-g-p.sourcerer.tech/files/0e3e898a-1ac9-4a46-ac5d-f828fe9167ed"}],"Pouf":[{"sku":"O-BALBOA.LILA","name":"Balboa Pouf","coll":"Balboa Pouf","origin":"India","mat":"Cover: Cotton Filler: Eps Balls","img":"https://fileserver-g-p.sourcerer.tech/files/8fa39077-9fed-40c9-8dc1-7ab62908ea30"},{"sku":"O-COCO.SILV","name":"Coco Pouf","coll":"Coco Pouf","origin":"India","mat":"Cover: Polyester Filler: Eps Balls","img":"https://fileserver-g-p.sourcerer.tech/files/a740f3d5-54eb-4ea2-8ecb-12624553fff0"},{"sku":"BOS-02-9012OL.GN","name":"Boston","coll":"Boston","origin":"India","mat":"","img":"https://fileserver-g-p.sourcerer.tech/files/e1808742-9e9d-43ff-b8a0-4b7394880e9b"},{"sku":"O-KAREENA.GR.WH","name":"Kareena Pouf","coll":"Kareena Pouf","origin":"India","mat":"","img":"https://fileserver-g-p.sourcerer.tech/files/387de4c4-fff6-43eb-9b5b-e85bd7fc8240"},{"sku":"O-BALBOA-L-LILA","name":"Balboa Pouf","coll":"Balboa Pouf","origin":"India","mat":"Cover: Cotton Filler: Eps Balls","img":"https://fileserver-g-p.sourcerer.tech/files/a5bccbb3-65f2-4a0e-8109-a18c38c387d0"},{"sku":"O-BALBOA.SILV","name":"Balboa Pouf","coll":"Balboa Pouf","origin":"India","mat":"Cover: Cotton Filler: Eps Balls","img":"https://fileserver-g-p.sourcerer.tech/files/32fd3c40-e6b4-4116-8095-93bd71c36b65"},{"sku":"O-BALBOA.TURQ","name":"Balboa Pouf","coll":"Balboa Pouf","origin":"India","mat":"Cover: Cotton Filler: Eps Balls","img":"https://fileserver-g-p.sourcerer.tech/files/465b294e-ea14-4f56-b1f5-72023d52573b"},{"sku":"O-BALBOA.BLUE","name":"Balboa Pouf","coll":"Balboa Pouf","origin":"India","mat":"Cover: Cotton Filler: Eps Balls","img":"https://fileserver-g-p.sourcerer.tech/files/e99e1582-0cd4-4913-9585-f6db0191a380"},{"sku":"O-COCO.TEAL","name":"Coco Pouf","coll":"Coco Pouf","origin":"India","mat":"Cover: Polyester Filler: Eps Balls","img":"https://fileserver-g-p.sourcerer.tech/files/ada9a50f-732c-4438-a47d-334b9d803738"},{"sku":"O-BALBOA-L-RED","name":"Balboa Pouf","coll":"Balboa Pouf","origin":"India","mat":"Cover: Cotton Filler: Eps Balls","img":"https://fileserver-g-p.sourcerer.tech/files/e5fc743d-07cd-4b3f-9ab5-3f028537791a"},{"sku":"O-BALBOA.RED","name":"Balboa Pouf","coll":"Balboa Pouf","origin":"India","mat":"Cover: Cotton Filler: Eps Balls","img":"https://fileserver-g-p.sourcerer.tech/files/ecbde196-970d-4ea0-a35e-502e497d10e5"},{"sku":"O-BALBOA.GREE","name":"Balboa Pouf","coll":"Balboa Pouf","origin":"India","mat":"Cover: Cotton Filler: Eps Balls","img":"https://fileserver-g-p.sourcerer.tech/files/a3f670d3-4ba9-4e5c-9f4d-79f48a67accb"}],"Fountain":[{"sku":"FTN-20-1119GRAY","name":"FOUNTAIN","coll":"FOUNTAIN","origin":"China","mat":"100% Polyresin","img":"https://fileserver-g-p.sourcerer.tech/files/3bf33844-d0b7-4201-b4a9-0891ccbab15d"},{"sku":"FTN-21-1946GRAY","name":"FOUNTAIN","coll":"FOUNTAIN","origin":"China","mat":"100% Polyresin","img":"https://fileserver-g-p.sourcerer.tech/files/458af1c8-5f32-4b59-b1c3-a0b6363eb069"},{"sku":"FTN-17-1220GRAY","name":"FOUNTAIN","coll":"FOUNTAIN","origin":"China","mat":"100% Polyresin","img":"https://fileserver-g-p.sourcerer.tech/files/ef7643e8-b9a2-43aa-8518-8128307b98d8"},{"sku":"FTN-02-7014BROW","name":"FOUNTAIN","coll":"FOUNTAIN","origin":"China","mat":"100% Polyresin","img":"https://fileserver-g-p.sourcerer.tech/files/a91c476d-ea76-47dc-adbc-94d3a9cb44a3"},{"sku":"FTN-16-1220GRAY","name":"FOUNTAIN","coll":"FOUNTAIN","origin":"China","mat":"100% Polyresin","img":"https://fileserver-g-p.sourcerer.tech/files/d352e426-b1bc-477a-bbf8-9099c9963487"},{"sku":"FTN-01-2040GRAY","name":"FOUNTAIN","coll":"FOUNTAIN","origin":"China","mat":"100% Polyresin","img":"https://fileserver-g-p.sourcerer.tech/files/0fbb4d44-deca-4149-a610-f7a5712d7739"},{"sku":"FTN-05-9014GRAY","name":"FOUNTAIN","coll":"FOUNTAIN","origin":"China","mat":"100% Polyresin","img":"https://fileserver-g-p.sourcerer.tech/files/d167f965-af78-4c36-ae21-4bd7f9f23fdc"},{"sku":"FTN-13-3553GRAY","name":"FOUNTAIN","coll":"FOUNTAIN","origin":"China","mat":"100% Polyresin","img":"https://fileserver-g-p.sourcerer.tech/files/71fde58d-7e83-4d78-85ed-c4cef40a165f"},{"sku":"FTN-15-2539GRAY","name":"FOUNTAIN","coll":"FOUNTAIN","origin":"China","mat":"100% Polyresin","img":"https://fileserver-g-p.sourcerer.tech/files/e7834628-70ed-4cff-9588-0dfc1aeac0c4"},{"sku":"FTN-07-7013GR.WH","name":"FOUNTAIN","coll":"FOUNTAIN","origin":"China","mat":"100% Polyresin","img":"https://fileserver-g-p.sourcerer.tech/files/51ef2092-edbf-4073-a164-c2063157014a"},{"sku":"FTN-14-2224GRAY","name":"FOUNTAIN","coll":"FOUNTAIN","origin":"China","mat":"100% Polyresin","img":"https://fileserver-g-p.sourcerer.tech/files/ad2b3964-3328-4ea5-b512-38fcf543c9da"},{"sku":"FTN-19-9014GRAY","name":"FOUNTAIN","coll":"FOUNTAIN","origin":"China","mat":"100% Polyresin","img":"https://fileserver-g-p.sourcerer.tech/files/4f3aa247-c9f0-44bb-b681-8f52b09db930"}],"Chairs":[{"sku":"S-MON-GRAY","name":"Monaco Sofa","coll":"Monaco Sofa","origin":"China","mat":"","img":"https://fileserver-g-p.sourcerer.tech/files/55cd0071-2b78-4ade-a5cf-579a01b5e682"},{"sku":"NES-02-BK.WH","name":"Nest","coll":"Nest","origin":"China","mat":"Base Made Of Steel Basket: Resin Faux Wi","img":"https://fileserver-g-p.sourcerer.tech/files/9764f168-8b9f-46ab-941f-e5b49b65cc92"},{"sku":"NOVARA.GREEN","name":"Novara","coll":"Novara","origin":"China","mat":"","img":"https://fileserver-g-p.sourcerer.tech/files/cc7f8f1a-f8bf-46ec-a527-fb1016fcf5f7"},{"sku":"S-MON-BEIG","name":"Monaco Sofa","coll":"Monaco Sofa","origin":"China","mat":"","img":"https://fileserver-g-p.sourcerer.tech/files/652aee6b-3277-4745-95dd-6ea748af3385"},{"sku":"NES-01-BK.WH","name":"Nest","coll":"Nest","origin":"China","mat":"Base Made Of Steel Basket: Resin Faux Wi","img":"https://fileserver-g-p.sourcerer.tech/files/851a748a-a40d-4aaf-bb1f-18f2ec7dbf6c"},{"sku":"S-MON-BLUE","name":"Monaco Sofa","coll":"Monaco Sofa","origin":"China","mat":"","img":"https://fileserver-g-p.sourcerer.tech/files/7f19380c-65e6-4dd9-88de-779c6ce3ddb5"}]};
@@ -1209,7 +1470,7 @@ var NAV = [
   { label: 'Rugs',         href: '#/rugs' },
   { label: 'Accessories',  href: '#/accessories' },
   { label: 'About Us',     href: '#/about' },
-  { label: 'Catalogues',   href: '#/catalogues' },
+  { label: 'Catalogs',     href: '#/catalogs' },
   { label: 'Contact Us',   href: '#/contact' }
 ];
 
@@ -1272,7 +1533,7 @@ function productCardHTML(p, idBase) {
     +     '<a href="#/product/' + esc(p.sku) + '" class="pcard-img-link" aria-label="View ' + esc(p.name) + '">'
     +       '<img src="' + esc(p.img) + '" alt="' + esc(p.name) + '" loading="lazy" onerror="this.style.display=\'none\'">'
     +     '</a>'
-    +     '<a href="#/wishlist" class="pcard-wish" title="Add to wishlist" aria-label="Wishlist">'
+    +     '<a href="javascript:void(0)" onclick="addToWishlist(\'' + esc(p.sku) + '\', event)" class="pcard-wish" title="Add to wishlist" aria-label="Wishlist">'
     +       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>'
     +     '</a>'
     +   '</div>'
@@ -1304,7 +1565,7 @@ var ROUTES = {
   '/chairs':       function() { return renderCategory('Chairs'); },
   '/about':        renderAbout,
   '/contact':      renderContact,
-  '/catalogues':   renderCatalogues,
+  '/catalogs':     renderCatalogs,
   '/customer-care':renderCustomerCare,
   '/shipping':     renderShipping,
   '/returns':      renderReturns,
@@ -1312,8 +1573,360 @@ var ROUTES = {
   '/trade':        renderTrade,
   '/login':        renderLogin,
   '/signup':       renderSignup,
-  '/account':      renderAccount
+  '/account':      renderAccount,
+  '/wishlist':     renderWishlist
 };
+
+//// ============== WISHLIST (V10: multiple named lists) ==============
+var WISHLIST_KEY = 'tufan-wishlists';
+var LEGACY_WISHLIST_KEY = 'tufan-wishlist'; // V9 flat array — migrated on first read
+
+function _newListId() {
+  return 'wl_' + Date.now().toString(36) + Math.floor(Math.random()*1000);
+}
+function getWishlistData() {
+  // Returns { activeId, lists: [{ id, name, items: [sku...] }] }
+  var raw;
+  try { raw = JSON.parse(localStorage.getItem(WISHLIST_KEY) || 'null'); } catch(e) { raw = null; }
+  if (raw && raw.lists && raw.lists.length) return raw;
+
+  // Migrate from V9 flat array if present
+  var legacyItems = [];
+  try { legacyItems = JSON.parse(localStorage.getItem(LEGACY_WISHLIST_KEY) || '[]'); } catch(e) {}
+  var defaultList = { id: 'default', name: 'My Wishlist', items: Array.isArray(legacyItems) ? legacyItems : [] };
+  var data = { activeId: 'default', lists: [defaultList] };
+  setWishlistData(data);
+  return data;
+}
+function setWishlistData(data) {
+  try { localStorage.setItem(WISHLIST_KEY, JSON.stringify(data)); } catch(e) {}
+}
+function getActiveList() {
+  var d = getWishlistData();
+  for (var i = 0; i < d.lists.length; i++) if (d.lists[i].id === d.activeId) return d.lists[i];
+  return d.lists[0];
+}
+function setActiveListId(id) {
+  var d = getWishlistData();
+  for (var i = 0; i < d.lists.length; i++) if (d.lists[i].id === id) { d.activeId = id; setWishlistData(d); return; }
+}
+function createWishlist(name) {
+  var d = getWishlistData();
+  var trimmed = (name || '').trim();
+  if (!trimmed) { showWishToast('Please enter a wishlist name.'); return null; }
+  // Prevent duplicate names
+  for (var i = 0; i < d.lists.length; i++) {
+    if (d.lists[i].name.toLowerCase() === trimmed.toLowerCase()) {
+      showWishToast('A wishlist named "' + trimmed + '" already exists.');
+      return null;
+    }
+  }
+  var nl = { id: _newListId(), name: trimmed, items: [] };
+  d.lists.push(nl);
+  d.activeId = nl.id;
+  setWishlistData(d);
+  return nl;
+}
+function renameWishlist(id, name) {
+  var d = getWishlistData();
+  var trimmed = (name || '').trim();
+  if (!trimmed) return;
+  for (var i = 0; i < d.lists.length; i++) if (d.lists[i].id === id) { d.lists[i].name = trimmed; break; }
+  setWishlistData(d);
+}
+function deleteWishlist(id) {
+  var d = getWishlistData();
+  if (d.lists.length <= 1) { showWishToast('You need at least one wishlist.'); return; }
+  d.lists = d.lists.filter(function(l) { return l.id !== id; });
+  if (d.activeId === id) d.activeId = d.lists[0].id;
+  setWishlistData(d);
+}
+function addToWishlist(sku, ev) {
+  if (ev) { ev.preventDefault(); ev.stopPropagation(); }
+  var d = getWishlistData();
+  var active = null;
+  for (var i = 0; i < d.lists.length; i++) {
+    if (d.lists[i].id === d.activeId) { active = d.lists[i]; break; }
+  }
+  if (!active) active = d.lists[0];
+  if (active.items.indexOf(sku) === -1) {
+    active.items.push(sku);
+    setWishlistData(d);
+    showWishToast('Product added to "' + active.name + '"');
+  } else {
+    showWishToast('Already in "' + active.name + '"');
+  }
+  // V10: stay on the same page — do NOT navigate
+}
+function removeFromWishlist(listId, sku, ev) {
+  if (ev) { ev.preventDefault(); ev.stopPropagation(); }
+  var d = getWishlistData();
+  for (var i = 0; i < d.lists.length; i++) {
+    if (d.lists[i].id === listId) {
+      d.lists[i].items = d.lists[i].items.filter(function(s) { return s !== sku; });
+      break;
+    }
+  }
+  setWishlistData(d);
+  showWishToast('Removed from wishlist');
+  if (currentRoute() === '/wishlist') navigate();
+}
+function addWishlistItemToCart(sku, ev) {
+  if (ev) { ev.preventDefault(); ev.stopPropagation(); }
+  showWishToast('Added to cart');
+}
+function handleCreateWishlist(ev) {
+  if (ev) ev.preventDefault();
+  var inp = document.getElementById('wishNewName');
+  var name = inp ? inp.value : '';
+  if (createWishlist(name)) {
+    if (currentRoute() === '/wishlist') navigate();
+  }
+}
+function handleSwitchActiveList(id) {
+  setActiveListId(id);
+  if (currentRoute() === '/wishlist') navigate();
+}
+function handleDeleteList(id, ev) {
+  if (ev) { ev.preventDefault(); ev.stopPropagation(); }
+  if (typeof confirm === 'function' && !confirm('Delete this wishlist? Items in it will be removed.')) return;
+  deleteWishlist(id);
+  if (currentRoute() === '/wishlist') navigate();
+}
+
+//// ============== WISHLIST TOAST BANNER (V10) ==============
+// Bottom-anchored banner with × close, auto-dismiss after 5s.
+var wishToastT;
+function showWishToast(msg) {
+  var t = document.getElementById('wishToast');
+  if (!t) return;
+  t.innerHTML = ''
+    + '<span class="wt-msg">' + esc(String(msg)) + '</span>'
+    + '<button type="button" class="wt-close" aria-label="Dismiss" onclick="hideWishToast()">'
+    +   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>'
+    + '</button>';
+  t.classList.add('show');
+  clearTimeout(wishToastT);
+  wishToastT = setTimeout(hideWishToast, 5000);
+}
+function hideWishToast() {
+  var t = document.getElementById('wishToast');
+  if (t) t.classList.remove('show');
+  clearTimeout(wishToastT);
+}
+
+//// ============== TEAR SHEET DOWNLOAD (V10) ==============
+// Generates a clean, print-ready single-page tear sheet for the product.
+// No prices, no nav, no footer. Opens in a new window and auto-triggers print.
+function buildTearSheetHTML(p) {
+  var sizes = sizesForProduct(p).map(function(s) { return '<li>' + esc(s) + '</li>'; }).join('');
+  var safeImg = esc(p.img || '');
+  var safeName = esc(p.name || '');
+  var safeSku  = esc(p.sku || '');
+  var safeColl = esc(p.coll || p.cat || '');
+  var safeOrigin = esc(p.origin || '—');
+  var safeMat = esc(p.mat || '—');
+  var safeCat = esc(p.cat || '—');
+
+  var css = ''
+    + '@page { size: A4; margin: 16mm; }'
+    + 'html, body { margin: 0; padding: 0; background: #FFFFFF; color: #222222;'
+    + '  font-family: \'Nunito Sans\', Helvetica, Arial, sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }'
+    + '.ts-wrap { max-width: 760px; margin: 0 auto; padding: 24px; }'
+    + '.ts-head { display: flex; justify-content: space-between; align-items: flex-end;'
+    + '  border-bottom: 2px solid #DA277F; padding-bottom: 12px; margin-bottom: 22px; }'
+    + '.ts-brand { font-family: \'Cormorant Garamond\', Georgia, serif; font-weight: 800;'
+    + '  font-size: 28px; color: #DA277F; letter-spacing: 4px; }'
+    + '.ts-tagline { font-size: 10px; letter-spacing: 1.6px; text-transform: uppercase; color: #777; }'
+    + '.ts-doc { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #777; }'
+    + '.ts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }'
+    + '.ts-img { width: 100%; aspect-ratio: 1/1; background: #F7F7F5;'
+    + '  border: 1px solid #EEEEEE; border-radius: 4px; overflow: hidden; }'
+    + '.ts-img img { width: 100%; height: 100%; object-fit: cover; display: block; }'
+    + '.ts-coll { font-size: 10px; letter-spacing: 1.4px; text-transform: uppercase;'
+    + '  color: #DA277F; margin-bottom: 6px; }'
+    + '.ts-name { font-family: \'Cormorant Garamond\', Georgia, serif;'
+    + '  font-size: 26px; font-weight: 700; line-height: 1.15; margin: 0 0 6px; color: #1A1A1A; }'
+    + '.ts-sku { font-size: 11px; color: #888; margin-bottom: 14px; letter-spacing: 0.3px; }'
+    + '.ts-section-title { font-size: 10px; font-weight: 700; letter-spacing: 1.4px;'
+    + '  text-transform: uppercase; color: #DA277F; margin: 14px 0 6px; }'
+    + '.ts-sizes { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 6px; }'
+    + '.ts-sizes li { font-size: 11px; padding: 5px 10px; border: 1px solid #D9D6D2;'
+    + '  border-radius: 4px; background: #FFFFFF; }'
+    + '.ts-desc { font-size: 12px; line-height: 1.6; color: #333; margin: 8px 0 0; }'
+    + '.ts-specs { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 11.5px; }'
+    + '.ts-specs th, .ts-specs td { text-align: left; padding: 8px 10px;'
+    + '  border-bottom: 1px solid #EEEEEE; }'
+    + '.ts-specs th { width: 36%; color: #777; font-weight: 600; letter-spacing: 0.3px; }'
+    + '.ts-foot { margin-top: 26px; padding-top: 12px; border-top: 1px solid #EEEEEE;'
+    + '  display: flex; justify-content: space-between; font-size: 10px; color: #888;'
+    + '  letter-spacing: 0.3px; }'
+    + '.ts-note { font-size: 10px; color: #999; margin-top: 18px; font-style: italic; }'
+    + '@media print { .ts-noprint { display: none !important; } }';
+
+  var html = ''
+    + '<!doctype html><html lang="en"><head><meta charset="utf-8">'
+    + '<title>Tear Sheet · ' + safeName + ' · Tufan Rugs</title>'
+    + '<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">'
+    + '<style>' + css + '</style></head><body>'
+    + '<div class="ts-wrap">'
+    +   '<div class="ts-head">'
+    +     '<div><div class="ts-brand">TUFAN</div><div class="ts-tagline">Wholesale Rugs · For the Trade</div></div>'
+    +     '<div class="ts-doc">Product Tear Sheet</div>'
+    +   '</div>'
+    +   '<div class="ts-grid">'
+    +     '<div class="ts-img"><img src="' + safeImg + '" alt="' + safeName + '" onerror="this.style.display=\'none\'"></div>'
+    +     '<div>'
+    +       '<div class="ts-coll">' + safeColl + '</div>'
+    +       '<h1 class="ts-name">' + safeName + '</h1>'
+    +       '<div class="ts-sku">SKU · ' + safeSku + '</div>'
+    +       '<div class="ts-section-title">Available Sizes</div>'
+    +       '<ul class="ts-sizes">' + sizes + '</ul>'
+    +       '<div class="ts-section-title">Description</div>'
+    +       '<p class="ts-desc">Hand-crafted in ' + safeOrigin + ', this piece is part of our '
+    +         safeColl + ' series and a staple choice for residential, hospitality and showroom projects. '
+    +         'Each unit is photographed individually before shipping so the rug you see is the rug you receive.</p>'
+    +       '<table class="ts-specs">'
+    +         '<tr><th>Origin</th><td>' + safeOrigin + '</td></tr>'
+    +         '<tr><th>Material</th><td>' + safeMat + '</td></tr>'
+    +         '<tr><th>Collection</th><td>' + safeColl + '</td></tr>'
+    +         '<tr><th>Category</th><td>' + safeCat + '</td></tr>'
+    +         '<tr><th>Lead time</th><td>Ships in 5 business days</td></tr>'
+    +       '</table>'
+    +       '<p class="ts-note">Wholesale pricing available to approved trade accounts. Sign in to view your tier pricing.</p>'
+    +     '</div>'
+    +   '</div>'
+    +   '<div class="ts-foot">'
+    +     '<div>Tufan Rugs &nbsp;·&nbsp; tufan@tufanrugs.com &nbsp;·&nbsp; 713-988 7779</div>'
+    +     '<div>Generated ' + new Date().toLocaleDateString() + '</div>'
+    +   '</div>'
+    + '</div>'
+    + '<script>window.addEventListener("load", function(){ setTimeout(function(){ window.print(); }, 350); });<\/script>'
+    + '</body></html>';
+  return html;
+}
+function downloadTearSheet(sku, ev) {
+  if (ev) { ev.preventDefault(); ev.stopPropagation(); }
+  if (!getUser()) {
+    showWishToast('Please sign in to download tear sheets.');
+    return;
+  }
+  var p = findProductBySku(sku);
+  if (!p) return;
+  var html = buildTearSheetHTML(p);
+  var w = window.open('', '_blank');
+  if (!w) {
+    showWishToast('Please allow pop-ups to download the tear sheet.');
+    return;
+  }
+  w.document.open();
+  w.document.write(html);
+  w.document.close();
+  showWishToast('Tear sheet opened \u2014 use Save as PDF in the print dialog.');
+}
+
+//// ============== SIZES (V9) ==============
+var DEFAULT_SIZES = ["4' × 6'", "5' × 8'", "6' × 9'", "8' × 10'", "9' × 12'"];
+var ACCESSORY_SIZES = ['Standard', '18" × 18"', '20" × 20"', '22" × 22"'];
+function sizesForProduct(p) {
+  if (ACCESSORY_CATS.indexOf(p.cat) > -1) return ACCESSORY_SIZES;
+  return DEFAULT_SIZES;
+}
+function sizesBlockHTML(p) {
+  var sizes = sizesForProduct(p);
+  var pills = sizes.map(function(s, i) {
+    return '<button type="button" class="pdp-size-pill' + (i===0 ? ' active' : '') + '" onclick="selectSize(this)">' + esc(s) + '</button>';
+  }).join('');
+  return ''
+    + '<div class="pdp-sizes" data-cmt="pdp-sizes" data-cmt-label="PDP · Size variants">'
+    +   '<div class="pdp-sizes-label">Size <span class="pdp-sizes-sel">' + esc(sizes[0]) + '</span></div>'
+    +   '<div class="pdp-size-pills">' + pills + '</div>'
+    + '</div>';
+}
+function selectSize(btn) {
+  var parent = btn.parentNode;
+  var pills = parent.querySelectorAll('.pdp-size-pill');
+  for (var i = 0; i < pills.length; i++) pills[i].classList.remove('active');
+  btn.classList.add('active');
+  var label = parent.parentNode.querySelector('.pdp-sizes-sel');
+  if (label) label.textContent = btn.textContent;
+}
+
+function renderWishlist() {
+  var data = getWishlistData();
+  var active = getActiveList();
+  var all = allProducts();
+
+  // Tabs across all lists
+  var tabs = data.lists.map(function(l) {
+    var isActive = (l.id === active.id);
+    return ''
+      + '<button class="wish-tab' + (isActive ? ' active' : '') + '" type="button" onclick="handleSwitchActiveList(\'' + esc(l.id) + '\')" data-cmt="wish-tab-' + esc(l.id) + '" data-cmt-label="Wishlist tab · ' + esc(l.name) + '">'
+      +   '<span class="wt-name">' + esc(l.name) + '</span>'
+      +   '<span class="wt-count">' + l.items.length + '</span>'
+      + '</button>';
+  }).join('');
+
+  // Items in active list
+  var items = active.items.map(function(sku) {
+    for (var i = 0; i < all.length; i++) if (all[i].sku === sku) return all[i];
+    return null;
+  }).filter(Boolean);
+
+  var itemsHtml;
+  if (!items.length) {
+    itemsHtml = ''
+      + '<div class="wish-empty" data-cmt="wish-empty" data-cmt-label="Wishlist · Empty state">'
+      +   '<p>"' + esc(active.name) + '" is currently empty. Save items from any product page or product card.</p>'
+      +   '<div style="margin-top:14px;"><a href="#/rugs" class="btn btn-primary">Browse Rugs</a> '
+      +   '<a href="#/accessories" class="btn btn-ghost">Browse Accessories</a></div>'
+      + '</div>';
+  } else {
+    itemsHtml = '<div class="wish-table">' + items.map(function(p) {
+      return ''
+        + '<div class="wish-row" data-cmt="wish-row-' + esc(p.sku) + '" data-cmt-label="Wishlist row · ' + esc(p.name) + '">'
+        +   '<a href="#/product/' + esc(p.sku) + '" class="wish-img"><img src="' + esc(p.img) + '" alt="' + esc(p.name) + '" onerror="this.style.display=\'none\'"></a>'
+        +   '<div class="wish-info">'
+        +     '<div class="wish-coll">' + esc(p.coll || p.cat) + '</div>'
+        +     '<a href="#/product/' + esc(p.sku) + '" class="wish-name">' + esc(p.name) + '</a>'
+        +     '<div class="wish-sku">SKU: ' + esc(p.sku) + '</div>'
+        +   '</div>'
+        +   '<div class="wish-actions">'
+        +     '<button class="btn btn-primary btn-sm" onclick="addWishlistItemToCart(\'' + esc(p.sku) + '\', event)">Add to Cart</button>'
+        +     '<a href="javascript:void(0)" class="wish-remove" onclick="removeFromWishlist(\'' + esc(active.id) + '\', \'' + esc(p.sku) + '\', event)" aria-label="Remove from wishlist">Remove</a>'
+        +   '</div>'
+        + '</div>';
+    }).join('') + '</div>';
+  }
+
+  // Delete-this-list button (disabled when only one list exists)
+  var canDelete = data.lists.length > 1;
+  var deleteBtn = canDelete
+    ? '<button type="button" class="wish-list-delete" onclick="handleDeleteList(\'' + esc(active.id) + '\', event)" data-cmt="wish-delete-list" data-cmt-label="Wishlist · Delete this list">Delete this list</button>'
+    : '';
+
+  return ''
+    + '<div class="page-head" data-cmt="wish-head" data-cmt-label="Wishlist · Page heading">'
+    +   '<h1>Your Wishlists</h1>'
+    +   '<p>Organize saved items into named lists \u2014 by project, by client, or however you like. New items go into your active wishlist.</p>'
+    + '</div>'
+    + '<section class="section" data-cmt="wish-tabs-section" data-cmt-label="Wishlist · Tabs & create">'
+    +   '<div class="container">'
+    +     '<div class="wish-toolbar">'
+    +       '<div class="wish-tabs" role="tablist" data-cmt="wish-tabs" data-cmt-label="Wishlist tabs">' + tabs + '</div>'
+    +       '<form class="wish-create" onsubmit="handleCreateWishlist(event)" data-cmt="wish-create" data-cmt-label="Wishlist · Create new form">'
+    +         '<input type="text" id="wishNewName" placeholder="New wishlist name (e.g. Carter Hotel Project)" maxlength="40">'
+    +         '<button type="submit" class="btn btn-primary btn-sm">+ Create</button>'
+    +       '</form>'
+    +     '</div>'
+    +     '<div class="wish-active-head">'
+    +       '<div><strong>' + esc(active.name) + '</strong> \u00b7 ' + items.length + ' item' + (items.length === 1 ? '' : 's') + '</div>'
+    +       deleteBtn
+    +     '</div>'
+    +     itemsHtml
+    +   '</div>'
+    + '</section>';
+}
 
 function currentRoute() {
   var h = window.location.hash || '#/';
@@ -1588,9 +2201,9 @@ function renderContact() {
     + '</section>';
 }
 
-//// ============== PAGE: CATALOGUES ==============
+//// ============== PAGE: CATALOGS ==============
 
-function renderCatalogues() {
+function renderCatalogs() {
   var cats = [
     { name: 'Master Catalog 2026', img: COLLECTIONS[0].img, pages: 124, desc: 'The complete Tufan catalog · all categories' },
     { name: 'Rugs Lookbook', img: COLLECTIONS[2].img, pages: 88, desc: 'Hand-knotted & flatweave selection' },
@@ -1601,7 +2214,7 @@ function renderCatalogues() {
   ];
   var cards = cats.map(function(c, i) {
     return ''
-      + '<div class="catalog-card" data-cmt="cat-pdf-' + (i+1) + '" data-cmt-label="Catalogue · ' + esc(c.name) + '">'
+      + '<div class="catalog-card" data-cmt="cat-pdf-' + (i+1) + '" data-cmt-label="Catalog · ' + esc(c.name) + '">'
       +   '<div class="catalog-cover">'
       +     '<img src="' + esc(c.img) + '" alt="' + esc(c.name) + '" loading="lazy" onerror="this.style.display=\'none\'">'
       +     '<span class="pdf-badge">PDF · ' + c.pages + 'pp</span>'
@@ -1609,17 +2222,17 @@ function renderCatalogues() {
       +   '<div class="catalog-body">'
       +     '<h4>' + esc(c.name) + '</h4>'
       +     '<p>' + esc(c.desc) + '</p>'
-      +     '<a href="#/catalogues" class="btn btn-primary" style="padding:10px 18px; font-size:11px;">Download PDF</a>'
+      +     '<a href="#/catalogs" class="btn btn-primary" style="padding:10px 18px; font-size:11px;">Download PDF</a>'
       +   '</div>'
       + '</div>';
   }).join('');
 
   return ''
-    + '<div class="page-head" data-cmt="catalogues-head" data-cmt-label="Catalogues · Page heading">'
-    +   '<h1>Catalogues</h1>'
+    + '<div class="page-head" data-cmt="catalogs-head" data-cmt-label="Catalogs · Page heading">'
+    +   '<h1>Catalogs</h1>'
     +   '<p>Downloadable PDFs of our complete catalog. Trade account sign-in unlocks pricing sheets.</p>'
     + '</div>'
-    + '<section class="section" data-cmt="catalogues-grid" data-cmt-label="Catalogues · PDF grid">'
+    + '<section class="section" data-cmt="catalogs-grid" data-cmt-label="Catalogs · PDF grid">'
     +   '<div class="container">'
     +     '<div class="catalog-grid">' + cards + '</div>'
     +   '</div>'
@@ -1733,9 +2346,9 @@ function renderSignup() {
     +       '</div>'
     +       '<div class="field-row">'
     +         '<div class="field"><label>Email</label><input required type="email" placeholder="you@design.com" autocomplete="email"></div>'
-    +         '<div class="field"><label>Phone</label><input type="tel" placeholder="(212) 555-0123" autocomplete="tel"></div>'
+    +         '<div class="field"><label>Phone</label><input required type="tel" placeholder="(212) 555-0123" autocomplete="tel"></div>'
     +       '</div>'
-    +       '<div class="field"><label>Company <span style="color:var(--c-text-mute); font-weight:400; text-transform:none; letter-spacing:0;">(optional)</span></label><input name="company" type="text" placeholder="Design firm or retail store" autocomplete="organization"></div>'
+    +       '<div class="field"><label>Company</label><input required name="company" type="text" placeholder="Design firm or retail store" autocomplete="organization"></div>'
     +       '<div class="field"><label>Password</label><input required type="password" placeholder="Create a password" autocomplete="new-password"></div>'
     +       '<label class="auth-check" style="margin:6px 0 14px;"><input required type="checkbox"> I agree to the <a href="#/terms" class="auth-link">terms</a> and <a href="#/privacy" class="auth-link">privacy policy</a>.</label>'
     +       '<button class="btn btn-primary" type="submit" style="width:100%;">Create Account</button>'
@@ -1900,8 +2513,17 @@ function renderProduct(sku) {
 
   var accessHref = getUser() ? '#/cart' : '#/login';
 
+  // V10: tear-sheet download button (logged-in users only)
+  var tearBtn = getUser()
+    ? '<button type="button" class="pdp-download" onclick="downloadTearSheet(\'' + esc(p.sku) + '\', event)" data-cmt="pdp-download" data-cmt-label="PDP · Tear sheet download" title="Download tear sheet (no prices)" aria-label="Download tear sheet">'
+      + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>'
+      + '<span>Download Tear Sheet</span>'
+      + '</button>'
+    : '';
+
   return ''
     + '<main class="pdp-wrap" data-cmt="pdp" data-cmt-label="PDP · ' + esc(p.name) + '">'
+    +   tearBtn
     +   crumb
     +   '<div class="pdp-grid">'
     +     '<section class="pdp-gallery">'
@@ -1913,15 +2535,16 @@ function renderProduct(sku) {
     +     '<section class="pdp-info">'
     +       '<div class="pdp-collection" data-cmt="pdp-coll" data-cmt-label="PDP · Collection eyebrow">' + esc(p.coll || p.cat) + '</div>'
     +       '<h1 class="pdp-title" data-cmt="pdp-title" data-cmt-label="PDP · Title">' + esc(p.name) + '</h1>'
-    +       '<div class="pdp-sku">SKU: ' + esc(p.sku) + '</div>'
+    +       sizesBlockHTML(p)
     +       '<p class="pdp-desc" data-cmt="pdp-desc" data-cmt-label="PDP · Description">Hand-crafted in ' + esc(p.origin || 'an artisan workshop') + ', this piece is part of our <strong>' + esc(p.coll || p.cat) + '</strong> series and a staple choice for residential, hospitality and showroom projects. Each unit is photographed individually before shipping so the rug you see is the rug you receive.</p>'
     +       '<div class="pdp-cta-row" data-cmt="pdp-cta" data-cmt-label="PDP · CTA row">'
     +         '<a href="' + accessHref + '" class="btn btn-primary btn-sm">Access Pricing</a>'
-    +         '<a href="#/wishlist" class="btn btn-ghost btn-sm" aria-label="Save to wishlist" title="Save to wishlist">'
+    +         '<a href="javascript:void(0)" onclick="addToWishlist(\'' + esc(p.sku) + '\', event)" class="btn btn-ghost btn-sm" aria-label="Save to wishlist" title="Save to wishlist">'
     +           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>'
     +         '</a>'
     +       '</div>'
     +       '<dl class="pdp-specs" data-cmt="pdp-specs" data-cmt-label="PDP · Specifications">'
+    +         '<dt>SKU</dt><dd>' + esc(p.sku) + '</dd>'
     +         '<dt>Origin</dt><dd>' + esc(p.origin || '—') + '</dd>'
     +         '<dt>Material</dt><dd>' + esc(p.mat || '—') + '</dd>'
     +         '<dt>Collection</dt><dd>' + esc(p.coll || '—') + '</dd>'
